@@ -15,7 +15,7 @@ const RUTAS = [
   [/^#\/mesas$/, vistaMesas, { nav: 'mesas' }],
   [/^#\/mesa\/nueva$/, vistaNuevaMesa, { nav: 'mesas' }],
   [/^#\/acta\/(\d+)$/, vistaConteo, { nav: 'mesas', barra: true }],
-  [/^#\/acta\/(\d+)\/resumen$/, vistaResumen, { nav: 'mesas' }],
+  [/^#\/acta\/(\d+)\/resumen$/, vistaResumen, { nav: 'mesas', barra: true }],
   [/^#\/dashboard$/, vistaDashboard, { nav: 'dashboard' }],
   [/^#\/admin$/, vistaAdmin, { nav: 'admin' }],
   [/^#\/cuenta$/, vistaCuenta, { nav: 'cuenta' }],

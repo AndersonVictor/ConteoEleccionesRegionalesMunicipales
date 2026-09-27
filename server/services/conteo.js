@@ -5,7 +5,7 @@ import { ARBOL_JSON, describir, esDistrito } from '../lib/ubigeo.js';
 import { agregarManual, asegurarOrganizaciones, organizacionesDeDistrito, sincronizarDistritoJNE } from '../lib/organizaciones.js';
 import { firmaConteo, recalcularMesa } from '../lib/consolidado.js';
 import { fallar, h, requiereAdmin, requiereLogin } from '../lib/http.js';
-import { ESPECIALES, evaluarCuadre, seccionesParaUbigeo } from '../../shared/acta.js';
+import { ESPECIALES, errorObservacion, evaluarCuadre, motivoNoCierre, seccionesParaUbigeo } from '../../shared/acta.js';
 import { errorElectores, errorNumeroMesa, errorTextoLibre, mayusculas } from '../../shared/validacion.js';
 
 const MAX_REGISTROS = 1000; // una mesa tiene como máximo 300 electores; margen para registros por sección
@@ -228,7 +228,10 @@ export function rutasConteo({ db }) {
     const observacion = mayusculas(req.body?.observacion);
     if (!cuadre.ok) {
       if (!req.body?.forzar) fallar(422, 'El acta no cuadra. Revisa los totales antes de cerrar.');
-      if (observacion.length < 5) fallar(400, 'Explica en una observación por qué cierras un acta que no cuadra');
+      const motivo = motivoNoCierre(cuadre);
+      if (motivo) fallar(422, motivo);
+      const err = errorObservacion(observacion);
+      if (err) fallar(400, err);
     }
     if (observacion.length > 500) fallar(400, 'La observación es muy larga');
     if (!acta.registros.length) fallar(400, 'El acta no tiene votos registrados');

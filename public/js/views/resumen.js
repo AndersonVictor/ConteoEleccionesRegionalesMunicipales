@@ -1,5 +1,5 @@
 import { actaLocal, api, enviarActa, guardarActaLocal, local } from '../api.js';
-import { ESPECIALES, SECCIONES, evaluarCuadre, resumenSeccion, textoResultado } from '/shared/acta.js';
+import { ESPECIALES, SECCIONES, errorObservacion, evaluarCuadre, motivoNoCierre, resumenSeccion, textoResultado } from '/shared/acta.js';
 import { botonAyuda, cargando, confirmar, fmt, html, iconos, logo, modal, palitos, titulo, toast } from '../ui.js';
 import { cargarActa } from './conteo.js';
 import { guia } from '../guia.js';
@@ -63,6 +63,7 @@ export async function vistaResumen(app, id) {
       electoresHabiles: acta.mesa.electores_habiles,
     });
     const abierta = acta.estado === 'borrador';
+    const motivo = motivoNoCierre(cuadre);
     app.innerHTML = String(html`
       <div class="encabezado">
         <a class="btn-icono" href="${abierta ? `#/acta/${id}` : '#/mesas'}" aria-label="Volver">${iconos.atras}</a>
@@ -86,18 +87,21 @@ export async function vistaResumen(app, id) {
         ${secciones.map((s) => tablaSeccion(s, cuadre.conteo[s]))}
         ${historial()}
         <div class="stack">
-          ${abierta
-            ? html`
-              <button class="btn primario bloque" data-accion="cerrar" ${cuadre.ok ? '' : 'disabled'}>${iconos.check} Cerrar acta y enviar resultado</button>
-              ${cuadre.ok ? '' : html`<button class="btn bloque" data-accion="forzar">Cerrar con observación</button>`}
-              <a class="btn suave bloque" href="#/acta/${id}">Seguir contando</a>`
-            : html`
-              <button class="btn primario bloque" data-accion="compartir">${iconos.compartir} Compartir resultado</button>
-              <button class="btn bloque" data-accion="copiar">Copiar texto</button>
-              <button class="btn suave bloque" data-accion="reabrir">Reabrir para corregir</button>`}
+          ${abierta && !cuadre.ok && motivo ? html`<div class="aviso warn">${motivo}</div>` : ''}
+          ${abierta && !cuadre.ok && !motivo ? html`<div class="aviso warn">La diferencia es pequeña. Si la mesa la registró así en el acta oficial, puedes cerrar explicando el motivo.</div>
+            <button class="btn bloque" data-accion="forzar">Cerrar con observación</button>` : ''}
+          ${abierta ? '' : html`<button class="btn suave bloque" data-accion="reabrir">Reabrir para corregir</button>`}
           ${abierta && !acta.registros.length ? html`<button class="btn peligro bloque" data-accion="eliminar">Eliminar esta mesa</button>` : ''}
         </div>
-      </div>`);
+      </div>
+      <div class="barra-accion"><div class="dentro row">
+        ${abierta
+          ? html`<a class="btn-icono" href="#/acta/${id}" aria-label="Seguir contando">${iconos.atras}</a>
+            <button class="btn primario registrar" data-accion="cerrar" ${cuadre.ok ? '' : 'disabled'}>
+              ${cuadre.ok ? html`${iconos.check} Cerrar acta y enviar` : 'Aún no cuadra'}</button>`
+          : html`<button class="btn-icono" data-accion="copiar" aria-label="Copiar texto">${iconos.copiar}</button>
+            <button class="btn primario registrar" data-accion="compartir">${iconos.compartir} Compartir resultado</button>`}
+      </div></div>`);
 
     const tv = app.querySelector('#tv');
     if (tv && abierta) {
@@ -137,11 +141,17 @@ export async function vistaResumen(app, id) {
       if (await confirmar('¿Cerrar el acta? Ya no podrás registrar más cédulas (podrás reabrirla si hace falta).', { ok: 'Cerrar acta' })) cerrar(false);
     } else if (a === 'forzar') {
       const m = modal(String(html`<form class="stack"><h2>Cerrar con observación</h2>
-        <p class="small muted" style="margin:0">El conteo no cuadra. Explica el motivo (p. ej. "la mesa contabilizó 2 cédulas más", "se perdió una cédula").</p>
-        <textarea class="input" name="obs" rows="3" required minlength="5"></textarea>
+        <p class="small muted" style="margin:0">El conteo no cuadra por pocos votos. Explica el motivo, por ejemplo: "se extravió una cédula durante el escrutinio" o "la mesa anotó 2 votantes más en la lista".</p>
+        <textarea class="input mayus" name="obs" rows="3" maxlength="500" required></textarea>
+        <div class="error-campo" id="err-obs"></div>
         <div class="grid-2"><button type="button" class="btn suave" data-cerrar>Cancelar</button><button class="btn primario">Cerrar acta</button></div></form>`));
       m.el.querySelector('form').onsubmit = (ev) => {
         ev.preventDefault();
+        const err = errorObservacion(ev.target.obs.value);
+        if (err) {
+          m.el.querySelector('#err-obs').textContent = err;
+          return;
+        }
         m.cerrar();
         cerrar(true, ev.target.obs.value);
       };

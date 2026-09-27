@@ -247,6 +247,32 @@ for (const [motor, opciones] of motores) {
       assert.equal(d.resultados.emitidos, 12);
     });
 
+    test('mesas no repetidas y cierre con observación solo con diferencia pequeña', async () => {
+      const u = await registrar(8);
+      const primero = (await llamar('/actas', { method: 'POST', token: u.token, body: { numero: '696969', ubigeo: '120401', electores_habiles: 300 } })).acta;
+      // El mismo personero no puede duplicar la mesa: recibe la misma acta.
+      const otraVez = (await llamar('/actas', { method: 'POST', token: u.token, body: { numero: '696969', ubigeo: '120401', electores_habiles: 300 } })).acta;
+      assert.equal(otraVez.id, primero.id);
+      // Nadie puede registrar ese número en otro lugar.
+      const r409 = await llamar('/actas', { method: 'POST', token: u.token, body: { numero: '696969', ubigeo: '040112', electores_habiles: 300 } });
+      assert.equal(r409.status, 409);
+
+      const ced = { v: { regional: 'B', consejero: 'B', provincial: 'B' } };
+      await llamar(`/actas/${primero.id}`, { method: 'PUT', token: u.token, body: { registros: [ced], total_votantes: 280 } });
+      const obs = 'SE EXTRAVIÓ UNA CÉDULA DURANTE EL CONTEO';
+      let r = await llamar(`/actas/${primero.id}/cerrar`, { method: 'POST', token: u.token, body: { forzar: true, observacion: obs } });
+      assert.equal(r.status, 422, 'con 279 votos de diferencia no se puede cerrar');
+      assert.match(r.error, /sigue contando/);
+
+      await llamar(`/actas/${primero.id}`, { method: 'PUT', token: u.token, body: { registros: Array(278).fill(ced), total_votantes: 280 } });
+      r = await llamar(`/actas/${primero.id}/cerrar`, { method: 'POST', token: u.token, body: { forzar: true, observacion: 'wwwww' } });
+      assert.equal(r.status, 400, 'observación sin sentido');
+      r = await llamar(`/actas/${primero.id}/cerrar`, { method: 'POST', token: u.token, body: { forzar: true, observacion: obs } });
+      assert.equal(r.status, 200, r.error);
+      assert.equal(r.acta.estado, 'cerrada');
+      assert.equal(r.acta.cuadra, false);
+    });
+
     test('agregar organización manual y permisos', async () => {
       const u = await registrar(3);
       const r = await llamar('/organizaciones', { method: 'POST', token: u.token, body: { seccion: 'distrital', ubigeo: '010102', nombre: 'Movimiento de Prueba' } });

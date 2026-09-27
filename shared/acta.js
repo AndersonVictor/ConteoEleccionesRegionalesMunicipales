@@ -109,7 +109,34 @@ export function evaluarCuadre({ registros, secciones, totalVotantes, electoresHa
   }
 
   const ok = checks.every((c) => c.ok) && referencia > 0;
-  return { ok, checks, conteo, referencia };
+  const diferenciaMaxima = Math.max(0, ...secciones.map((s) => Math.abs(conteo[s].total - referencia)));
+  return { ok, checks, conteo, referencia, diferenciaMaxima, totalIngresado: tv !== null, excedeHabiles: tv !== null && eh !== null && tv > eh };
+}
+
+// Un acta que no cuadra solo se puede cerrar con observación si la diferencia es pequeña
+// (p. ej. una cédula extraviada). Con diferencias grandes hay que seguir contando.
+export const TOLERANCIA_OBSERVACION = 5;
+
+/** Devuelve null si se puede cerrar con observación, o el motivo por el que no. */
+export function motivoNoCierre(cuadre) {
+  if (cuadre.ok) return null;
+  if (!cuadre.totalIngresado) return 'Ingresa el total de ciudadanos que votaron antes de cerrar.';
+  if (cuadre.excedeHabiles) return 'El total que votó no puede ser mayor que los electores hábiles.';
+  if (cuadre.diferenciaMaxima > TOLERANCIA_OBSERVACION) {
+    return `La diferencia es de ${cuadre.diferenciaMaxima} votos: sigue contando. Solo se puede cerrar con observación si faltan o sobran hasta ${TOLERANCIA_OBSERVACION} votos por elección.`;
+  }
+  return null;
+}
+
+/** La observación debe explicar de verdad el motivo (no "wwwww"). */
+export function errorObservacion(texto) {
+  const t = String(texto ?? '').trim();
+  const palabras = t.split(/\s+/).filter((p) => /[\p{L}]{2,}/u.test(p));
+  if (t.length < 15 || palabras.length < 3) return 'Explica el motivo con al menos 3 palabras (mínimo 15 caracteres).';
+  if (/(.)\1{4,}/u.test(t)) return 'La observación no puede tener caracteres repetidos.';
+  if (new Set(t.toLowerCase().replace(/[^\p{L}]/gu, '')).size < 5) return 'Escribe una observación real que explique la diferencia.';
+  if (t.length > 500) return 'La observación es muy larga (máximo 500 caracteres).';
+  return null;
 }
 
 /** Texto plano del resultado para compartir (WhatsApp, SMS). */
