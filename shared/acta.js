@@ -58,6 +58,17 @@ export function contar(registros, secciones) {
   return conteo;
 }
 
+/**
+ * ¿Se puede registrar otra cédula? Una mesa no puede tener más votos por elección que
+ * electores hábiles. Devuelve null si se puede, o el motivo por el que no.
+ */
+export function motivoTope(conteo, secciones, electoresHabiles, soloSeccion = null) {
+  const lista = soloSeccion ? [soloSeccion] : secciones;
+  const llena = lista.find((s) => (conteo[s]?.total || 0) >= electoresHabiles);
+  if (!llena) return null;
+  return `Ya hay ${electoresHabiles} votos en ${SECCIONES[llena].corto.toLowerCase()}: la mesa solo tiene ${electoresHabiles} electores hábiles. Si te equivocaste, deshaz o borra registros en el historial.`;
+}
+
 /** Totales de una sección: válidos, blancos, nulos, impugnados, emitidos. */
 export function resumenSeccion(c) {
   const votos = c?.votos || {};

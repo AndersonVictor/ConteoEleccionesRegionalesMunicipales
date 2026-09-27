@@ -1,6 +1,6 @@
 import { actaLocal, api, enviarActa, guardarActaLocal, local } from '../api.js';
 import { ESPECIALES, SECCIONES, errorObservacion, evaluarCuadre, motivoNoCierre, resumenSeccion, textoResultado } from '/shared/acta.js';
-import { botonAyuda, cargando, confirmar, fmt, html, iconos, logo, modal, palitos, titulo, toast } from '../ui.js';
+import { botonAyuda, cargando, confirmar, fmt, html, iconos, logo, modal, pct, titulo, toast } from '../ui.js';
 import { cargarActa } from './conteo.js';
 import { guia } from '../guia.js';
 
@@ -8,6 +8,7 @@ export async function vistaResumen(app, id) {
   app.innerHTML = String(cargando());
   let { acta, organizaciones } = await cargarActa(id);
   const secciones = acta.secciones;
+  let tabSel = secciones[0];
 
   const orgDe = (s, k) => organizaciones?.[s]?.organizaciones.find((o) => String(o.id) === k) || { id: k, nombre: `Org. ${k}` };
   const nombres = () => {
@@ -17,29 +18,82 @@ export async function vistaResumen(app, id) {
   };
   const guardar = () => guardarActaLocal(id, { acta, organizaciones });
 
-  function tablaSeccion(s, c) {
+  // Resultados de una elección: barras con logo, como en el dashboard.
+  function panelSeccion(s, c) {
     const r = resumenSeccion(c);
     const filas = (organizaciones?.[s]?.organizaciones || []).map((o) => ({ o, n: c.votos[String(o.id)] || 0 }));
     // Votos a organizaciones que ya no están en la lista (p. ej. quitadas por el admin).
     for (const k of Object.keys(c.votos)) if (!ESPECIALES[k] && !filas.some((f) => String(f.o.id) === k)) filas.push({ o: orgDe(s, k), n: c.votos[k] });
     filas.sort((a, b) => b.n - a.n);
+    const conVotos = filas.filter((f) => f.n);
     const ceros = filas.filter((f) => !f.n);
+    const max = Math.max(1, ...conVotos.map((f) => f.n));
     return html`<div class="card stack">
-      <div class="row between"><h2>${SECCIONES[s].titulo}</h2><span class="chip">${fmt(r.emitidos)}</span></div>
-      <div class="tabla-scroll"><table class="tabla">
-        <thead><tr><th>Organización</th><th class="n">Votos</th></tr></thead>
-        <tbody>
-          ${filas.filter((f) => f.n).map(({ o, n }) => html`<tr><td><div class="row">${logo(o, { chico: true })}<div class="grow"><div>${titulo(o.nombre)}</div>${palitos(n, { max: 60 })}</div></div></td><td class="n"><b>${fmt(n)}</b></td></tr>`)}
-          ${ceros.length ? html`<tr class="sub"><td colspan="2"><details><summary class="small" style="cursor:pointer">${ceros.length} organizaciones con 0 votos</summary>
-            <div class="small muted" style="margin-top:4px">${ceros.map((f) => titulo(f.o.nombre)).join(' · ')}</div></details></td></tr>` : ''}
-          <tr class="sub"><td>Votos válidos</td><td class="n">${fmt(r.validos)}</td></tr>
-          <tr class="sub"><td>Votos en blanco</td><td class="n">${fmt(r.blancos)}</td></tr>
-          <tr class="sub"><td>Votos nulos</td><td class="n">${fmt(r.nulos)}</td></tr>
-          <tr class="sub"><td>Votos impugnados</td><td class="n">${fmt(r.impugnados)}</td></tr>
-          <tr class="total"><td>Total de votos emitidos</td><td class="n">${fmt(r.emitidos)}</td></tr>
-        </tbody>
-      </table></div>
+      <div class="row between"><h2>${SECCIONES[s].titulo}</h2><span class="chip">${fmt(r.emitidos)} votos</span></div>
+      ${conVotos.length ? html`<div class="barras">${conVotos.map(({ o, n }, i) => html`
+        <div class="barra-org ${i === 0 ? 'primero' : ''}">
+          ${logo(o, { chico: true })}
+          <span class="nom">${titulo(o.nombre)}</span>
+          <span class="val">${fmt(n)}<small>${pct(r.validos ? (100 * n) / r.validos : 0)}</small></span>
+          <span class="pista" style="grid-column:2/4"><i style="width:${(100 * n) / max}%"></i></span>
+        </div>`)}</div>` : html`<p class="muted small" style="margin:0">Aún no hay votos para organizaciones.</p>`}
+      ${ceros.length ? html`<details><summary class="small muted" style="cursor:pointer">${ceros.length} organizaciones con 0 votos</summary>
+        <div class="small muted" style="margin-top:4px">${ceros.map((f) => titulo(f.o.nombre)).join(' · ')}</div></details>` : ''}
+      <div class="mini-kpis">
+        <div><b class="num">${fmt(r.validos)}</b><span>Válidos</span></div>
+        <div><b class="num">${fmt(r.blancos)}</b><span>Blancos</span></div>
+        <div><b class="num">${fmt(r.nulos)}</b><span>Nulos</span></div>
+        <div><b class="num">${fmt(r.impugnados)}</b><span>Impugnados</span></div>
+      </div>
     </div>`;
+  }
+
+  // Estado general del acta, grande y con color.
+  function estadoActa(cuadre, abierta) {
+    const tv = acta.total_votantes;
+    let clase = 'ok';
+    let icono = '✓';
+    let titulo_ = 'Todo cuadra';
+    let texto = 'Compara estos números con el acta que firma la mesa.';
+    if (!cuadre.ok) {
+      clase = cuadre.totalIngresado ? 'err' : 'warn';
+      icono = cuadre.totalIngresado ? '✕' : '!';
+      titulo_ = cuadre.totalIngresado ? 'Aún no cuadra' : 'Falta el total de votantes';
+      texto = cuadre.totalIngresado
+        ? (cuadre.excedeHabiles ? 'El total que votó es mayor que los electores hábiles.' : `La mayor diferencia es de ${fmt(cuadre.diferenciaMaxima)} voto${cuadre.diferenciaMaxima === 1 ? '' : 's'}.`)
+        : 'Anota cuántos ciudadanos votaron según la lista de electores.';
+    }
+    if (!abierta) {
+      titulo_ = acta.cuadra ? 'Acta cerrada · cuadra' : 'Acta cerrada con observación';
+      texto = acta.cuadra ? 'Tu resultado ya suma en el consolidado.' : acta.observacion || '';
+    }
+    return html`<div class="estado-acta ${clase}">
+      <div class="row">
+        <span class="icono-estado">${icono}</span>
+        <div class="grow"><div class="t">${titulo_}</div><div class="d">${texto}</div></div>
+      </div>
+      <div class="total-votantes">
+        <label><span>Total que votó</span>
+          <input class="input num" id="tv" inputmode="numeric" maxlength="3" value="${tv ?? ''}" placeholder="—" ${abierta ? '' : 'disabled'}></label>
+        <div class="de">de <b class="num">${fmt(acta.mesa.electores_habiles)}</b><span>electores hábiles</span></div>
+      </div>
+    </div>`;
+  }
+
+  // Avance de cada elección contra el total de votantes.
+  function avance(cuadre) {
+    const ref = cuadre.referencia || 0;
+    return html`<div class="avance-elecciones">${secciones.map((s) => {
+      const t = cuadre.conteo[s].total;
+      const ok = ref > 0 && t === ref && cuadre.totalIngresado;
+      const dif = t - ref;
+      return html`<button class="tile-eleccion ${ok ? 'ok' : dif ? 'err' : ''} ${s === tabSel ? 'sel' : ''}" data-accion="tab" data-s="${s}">
+        <span class="t">${SECCIONES[s].abrev}</span>
+        <span class="v num">${fmt(t)}<small>/${fmt(ref)}</small></span>
+        <span class="progreso"><i style="width:${ref ? Math.min(100, (100 * t) / ref) : 0}%"></i></span>
+        <span class="e">${ok ? '✓ Cuadra' : !cuadre.totalIngresado ? '—' : dif > 0 ? `Sobran ${dif}` : dif < 0 ? `Faltan ${-dif}` : '✓ Cuadra'}</span>
+      </button>`;
+    })}</div>`;
   }
 
   function historial() {
@@ -73,18 +127,9 @@ export async function vistaResumen(app, id) {
         ${abierta ? html`<span class="chip acc">En conteo</span>` : html`<span class="chip ${acta.cuadra ? 'ok' : 'warn'}">Cerrada</span>`}
       </div>
       <div class="stack-lg">
-        <div class="card stack">
-          <h2>Cuadre del acta</h2>
-          <div class="grid-2">
-            <label class="campo"><span>Total que votó</span>
-              <input class="input num" id="tv" inputmode="numeric" value="${acta.total_votantes ?? ''}" placeholder="Total" ${abierta ? '' : 'disabled'}></label>
-            <label class="campo"><span>Electores hábiles</span><input class="input num" value="${acta.mesa.electores_habiles}" disabled></label>
-          </div>
-          <ul class="checks">${cuadre.checks.map((c) => html`<li class="${c.nivel}"><span class="ic">${c.ok ? '✓' : c.nivel === 'warn' ? '!' : '✕'}</span><span>${c.msg}</span></li>`)}</ul>
-          ${cuadre.ok ? html`<div class="aviso ok"><b>Todo cuadra.</b> Compara estos números con el acta que firma la mesa.</div>` : ''}
-          ${acta.observacion ? html`<div class="aviso warn"><b>Observación:</b> ${acta.observacion}</div>` : ''}
-        </div>
-        ${secciones.map((s) => tablaSeccion(s, cuadre.conteo[s]))}
+        ${estadoActa(cuadre, abierta)}
+        ${avance(cuadre)}
+        ${panelSeccion(tabSel, cuadre.conteo[tabSel])}
         ${historial()}
         <div class="stack">
           ${abierta && !cuadre.ok && motivo ? html`<div class="aviso warn">${motivo}</div>` : ''}
@@ -137,6 +182,10 @@ export async function vistaResumen(app, id) {
     const b = e.target.closest('[data-accion]');
     if (!b) return;
     const a = b.dataset.accion;
+    if (a === 'tab') {
+      tabSel = b.dataset.s;
+      return pintar();
+    }
     if (a === 'cerrar') {
       if (await confirmar('¿Cerrar el acta? Ya no podrás registrar más cédulas (podrás reabrirla si hace falta).', { ok: 'Cerrar acta' })) cerrar(false);
     } else if (a === 'forzar') {

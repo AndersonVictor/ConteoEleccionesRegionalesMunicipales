@@ -125,21 +125,42 @@ Delante hace falta HTTPS: Caddy, Cloudflare o el balanceador de tu proveedor.
 
 ### Capacidad medida
 
-Prueba con `npm run carga` en **una sola máquina de 4 núcleos**. En esa máquina corrían a la vez PostgreSQL, Redis, Nginx, 2 réplicas de conteo, auth, resultados y el propio generador de carga. Hubo 200 personeros con actas de hasta 150 cédulas y 100 conexiones simultáneas:
+Prueba con `npm run carga` en **una sola máquina de 4 núcleos**. En esa máquina corrían a la vez PostgreSQL, Redis, Nginx, 2 réplicas de conteo, auth, resultados y el propio generador de carga. Hubo **1 000 personeros simulados**, con actas de hasta 150 cédulas y **250 conexiones simultáneas**:
 
 | Prueba | Pedidos/s | Latencia p50 | Latencia p99 | Errores |
 |---|---|---|---|---|
-| Guardar actas | 920 | 114 ms | 232 ms | 0 |
-| Dashboard | 4 687 | 19 ms | 36 ms | 0 |
-| Mezcla (4 guardados : 1 dashboard) | 1 137 | 77 ms | 250 ms | 0 |
+| Guardar actas | 898 | 291 ms | 582 ms | 0 |
+| Dashboard | 2 787 | 81 ms | 180 ms | 0 |
+| Mezcla (4 guardados : 1 dashboard) | 1 090 | 52 ms | 670 ms | 0 |
 
 Cómo leer estos números para **50 mil personeros**:
 
-- El dashboard no es el problema: con la caché aguanta miles de consultas por segundo.
-- El límite es el guardado de actas. Cada personero envía como máximo una vez cada 3 s, así que 920/s equivalen a unos 2 800 personeros contando a la vez en esa máquina.
-- En el escrutinio real se lee una cédula cada 5 a 10 s. Con 50 mil personeros contando al mismo tiempo son unos 5 a 10 mil guardados por segundo.
-- Para eso hay que separar PostgreSQL en su propio servidor (8 a 16 vCPU) y correr las réplicas de `conteo` en una o dos máquinas de 16 a 32 vCPU, o usar un servicio administrado (RDS, Cloud SQL, Neon, etc.).
+- El límite es el guardado de actas. En el escrutinio se lee una cédula cada 5 a 10 s, y el celular envía como máximo una vez cada 3 s. Un personero genera entre 0,1 y 0,3 guardados por segundo.
+- Con ~900 guardados/s, **esta máquina de 4 núcleos atiende unos 3 000 a 4 500 personeros contando a la vez**, sin errores.
+- 50 mil personeros contando al mismo tiempo necesitan unos 5 000 a 15 000 guardados/s, es decir entre 6 y 15 veces esta capacidad.
+- Eso se logra con PostgreSQL en su propio servidor (8 a 16 vCPU) y 2 o 3 máquinas de 8 a 16 vCPU con réplicas de `conteo` (`--scale conteo=12`), o con servicios administrados.
 - **No lo probé a esa escala.** Antes de la elección hay que correr `npm run carga` contra la infraestructura real.
+
+## Seguridad
+
+Lo que ya está:
+
+- Contraseñas con scrypt y sesiones firmadas (HMAC).
+- Consultas SQL parametrizadas.
+- Todo texto se escapa al mostrarse (sin inyección de HTML).
+- Política CSP estricta (solo se ejecuta código propio) y cabeceras anti-clickjacking.
+- Límites de intentos por IP.
+- Validaciones repetidas en el servidor: DNI, nombres, mesa única, tope de electores, cuadre y observación.
+- Cada personero solo ve y edita sus actas.
+- El token de Decolecta nunca llega al celular.
+
+Pendiente o a cuidar al publicar:
+
+- **HTTPS obligatorio**, y activar HSTS en `deploy/nginx.conf`.
+- **Definir `ADMIN_DNIS`**. Sin esa variable, el primer usuario que se registra queda como administrador.
+- Las sesiones duran 30 días y todavía no se pueden cerrar a distancia. Tampoco hay recuperación de contraseña.
+- Respaldos automáticos de PostgreSQL.
+- Monitoreo durante la jornada electoral.
 
 ## Variables de entorno
 

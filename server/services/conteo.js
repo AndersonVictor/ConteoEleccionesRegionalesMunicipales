@@ -5,7 +5,7 @@ import { ARBOL_JSON, describir, esDistrito } from '../lib/ubigeo.js';
 import { agregarManual, asegurarOrganizaciones, organizacionesDeDistrito, sincronizarDistritoJNE } from '../lib/organizaciones.js';
 import { firmaConteo, recalcularMesa } from '../lib/consolidado.js';
 import { fallar, h, requiereAdmin, requiereLogin } from '../lib/http.js';
-import { ESPECIALES, errorObservacion, evaluarCuadre, motivoNoCierre, seccionesParaUbigeo } from '../../shared/acta.js';
+import { ESPECIALES, SECCIONES, contar, errorObservacion, evaluarCuadre, motivoNoCierre, seccionesParaUbigeo } from '../../shared/acta.js';
 import { errorElectores, errorNumeroMesa, errorTextoLibre, mayusculas } from '../../shared/validacion.js';
 
 const MAX_REGISTROS = 1000; // una mesa tiene como máximo 300 electores; margen para registros por sección
@@ -161,7 +161,7 @@ export function rutasConteo({ db }) {
     res.json({ acta, organizaciones: await organizacionesDeDistrito(db, acta.mesa.ubigeo), jne });
   }));
 
-  async function validarRegistros(registros, secciones) {
+  async function validarRegistros(registros, secciones, electoresHabiles) {
     if (!Array.isArray(registros)) fallar(400, 'Registros inválidos');
     if (registros.length > MAX_REGISTROS) fallar(400, 'Demasiados registros para una mesa');
     const orgs = new Set();
@@ -180,6 +180,13 @@ export function rutasConteo({ db }) {
       if (!Object.keys(v).length) fallar(400, 'Registro vacío');
       return { id: String(r.id || '').slice(0, 40), ts: Number(r.ts) || Date.now(), v };
     });
+    // Ninguna elección puede tener más votos que electores hábiles tiene la mesa.
+    const conteo = contar(limpios, secciones);
+    for (const s of secciones) {
+      if (conteo[s].total > electoresHabiles) {
+        fallar(400, `${SECCIONES[s].corto} tiene ${conteo[s].total} votos y la mesa solo tiene ${electoresHabiles} electores hábiles`);
+      }
+    }
     if (orgs.size) {
       const ids = [...orgs];
       const { n } = await db.get(`SELECT COUNT(*) AS n FROM organizaciones WHERE id IN (${ids.map(() => '?').join(',')})`, ids);
@@ -193,7 +200,7 @@ export function rutasConteo({ db }) {
     if (a.estado === 'cerrada') fallar(409, 'El acta está cerrada. Reábrela para modificarla.');
     const actual = await actaCompleta(a);
     const b = req.body || {};
-    const registros = b.registros !== undefined ? await validarRegistros(b.registros, actual.secciones) : actual.registros;
+    const registros = b.registros !== undefined ? await validarRegistros(b.registros, actual.secciones, actual.mesa.electores_habiles) : actual.registros;
     let tv = b.total_votantes !== undefined ? b.total_votantes : a.total_votantes;
     if (tv === '' || tv === null) tv = null;
     else {

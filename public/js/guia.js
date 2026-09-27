@@ -45,7 +45,8 @@ const GUIAS = {
   ],
   resumen: [
     ['#tv', 'Total que votó', 'Copia aquí el número de ciudadanos que votaron según la lista de electores.'],
-    ['.checks', 'Revisión automática', 'En verde está lo que cuadra; en rojo, cuántos votos sobran o faltan en cada elección.'],
+    ['.estado-acta .row', 'Estado del acta', 'Verde: todo cuadra. Rojo: hay diferencias. Amarillo: falta anotar cuántos votaron.'],
+    ['.avance-elecciones', 'Cada elección', 'Cuántos votos lleva cada elección y si sobran o faltan. Toca una para ver sus resultados abajo.'],
     ['[data-accion=cerrar]', 'Cerrar acta', 'Solo se activa cuando todo cuadra. Al cerrarla, tu resultado se suma al consolidado.', 'top'],
   ],
   dashboard: [

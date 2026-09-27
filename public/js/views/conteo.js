@@ -1,5 +1,5 @@
 import { actaLocal, alCambiarSync, api, guardarActaLocal, local } from '../api.js';
-import { ESPECIALES, SECCIONES, contar } from '/shared/acta.js';
+import { ESPECIALES, SECCIONES, contar, motivoTope } from '/shared/acta.js';
 import { $, botonAyuda, cargando, confirmar, fmt, html, iconos, logo, logoEspecial, modal, palitos, titulo, toast, vibrar } from '../ui.js';
 import { guia } from '../guia.js';
 
@@ -53,6 +53,14 @@ export async function vistaConteo(app, id) {
     vibrar();
   }
 
+  // Si ya se anotó cuántos votaron, avisa al pasarse (puede ser un error de conteo o del total).
+  function avisarTotalVotantes() {
+    const tv = acta.total_votantes;
+    if (tv == null) return;
+    const max = Math.max(0, ...secciones.map((s) => contar(acta.registros, secciones)[s].total));
+    if (max === tv + 1) toast(`Ojo: ya hay más cédulas (${max}) que ciudadanos que votaron (${tv}). Revisa el conteo o el total.`, { error: true, duracion: 6000 });
+  }
+
   function deshacer() {
     const ultimo = acta.registros.at(-1);
     if (!ultimo) return toast('No hay nada que deshacer');
@@ -75,7 +83,7 @@ export async function vistaConteo(app, id) {
           <span class="sync ${sync === 'ok' ? 'ok' : 'pendiente'}" id="sync">${txtSync}</span>
         </div>
         ${botonAyuda(modo === 'cedula' ? 'conteo' : 'conteo-seccion')}
-        <div class="contador"><b class="num" id="contador">${fmt(cedulas)}</b><span>de ${fmt(acta.mesa.electores_habiles)}</span></div>
+        <div class="contador ${cedulas >= acta.mesa.electores_habiles ? 'lleno' : ''}"><b class="num" id="contador">${fmt(cedulas)}</b><span>de ${fmt(acta.mesa.electores_habiles)}</span></div>
       </div>
       <div class="segmentado" style="margin-top:10px" data-guia="modo">
         <button data-accion="modo" data-modo="cedula" class="${modo === 'cedula' ? 'activo' : ''}">Por cédula</button>
@@ -223,7 +231,10 @@ export async function vistaConteo(app, id) {
       siguientePaso();
     } else if (accion === 'registrar') {
       if (!secciones.every((x) => seleccion[x])) return;
+      const tope = motivoTope(contar(acta.registros, secciones), secciones, acta.mesa.electores_habiles);
+      if (tope) return toast(tope, { error: true, duracion: 6000 });
       agregarRegistro(seleccion);
+      avisarTotalVotantes();
       seleccion = {};
       paso = 0;
       toast(`Cédula #${acta.registros.length} registrada`, { accion: 'Deshacer', alAccion: deshacer, duracion: 2500 });
@@ -242,7 +253,10 @@ export async function vistaConteo(app, id) {
       tab = b.dataset.s;
       ultimoTocado = null;
     } else if (accion === 'mas') {
+      const tope = motivoTope(contar(acta.registros, secciones), secciones, acta.mesa.electores_habiles, tab);
+      if (tope) return toast(tope, { error: true, duracion: 6000 });
       agregarRegistro({ [tab]: b.dataset.op });
+      avisarTotalVotantes();
       ultimoTocado = `${tab}:${b.dataset.op}`;
     } else if (accion === 'menos') {
       const op = b.dataset.op;

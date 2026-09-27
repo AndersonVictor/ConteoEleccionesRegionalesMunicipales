@@ -264,6 +264,11 @@ for (const [motor, opciones] of motores) {
       assert.equal(r.status, 422, 'con 279 votos de diferencia no se puede cerrar');
       assert.match(r.error, /sigue contando/);
 
+      // No se puede registrar más votos que electores hábiles.
+      const tope = await llamar(`/actas/${primero.id}`, { method: 'PUT', token: u.token, body: { registros: Array(301).fill(ced) } });
+      assert.equal(tope.status, 400);
+      assert.match(tope.error, /300 electores hábiles/);
+
       await llamar(`/actas/${primero.id}`, { method: 'PUT', token: u.token, body: { registros: Array(278).fill(ced), total_votantes: 280 } });
       r = await llamar(`/actas/${primero.id}/cerrar`, { method: 'POST', token: u.token, body: { forzar: true, observacion: 'wwwww' } });
       assert.equal(r.status, 400, 'observación sin sentido');
@@ -271,6 +276,22 @@ for (const [motor, opciones] of motores) {
       assert.equal(r.status, 200, r.error);
       assert.equal(r.acta.estado, 'cerrada');
       assert.equal(r.acta.cuadra, false);
+    });
+
+    test('con ADMIN_DNIS solo esos DNIs son administradores', async () => {
+      process.env.ADMIN_DNIS = '10000009';
+      try {
+        assert.equal((await registrar(2)).usuario.rol, 'personero');
+        assert.equal((await registrar(9)).usuario.rol, 'admin');
+      } finally {
+        delete process.env.ADMIN_DNIS;
+      }
+    });
+
+    test('cabeceras de seguridad', async () => {
+      const r = await fetch(base + '/salud');
+      assert.match(r.headers.get('content-security-policy'), /script-src 'self'/);
+      assert.equal(r.headers.get('x-frame-options'), 'DENY');
     });
 
     test('agregar organización manual y permisos', async () => {

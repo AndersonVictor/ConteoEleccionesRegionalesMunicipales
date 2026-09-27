@@ -68,8 +68,10 @@ export function rutasAuth({ db, secreto }) {
     const id = await db.tx(async (t) => {
       // El primer usuario registrado administra el sistema.
       const { n } = await t.get('SELECT COUNT(*) AS n FROM usuarios');
-      const adminsEnv = String(process.env.ADMIN_DNIS || '').split(',').map((s) => s.trim());
-      const rol = Number(n) === 0 || adminsEnv.includes(dni) ? 'admin' : 'personero';
+      const adminsEnv = String(process.env.ADMIN_DNIS || '').split(',').map((s) => s.trim()).filter(Boolean);
+      // Con ADMIN_DNIS definido, solo esos DNIs son administradores. Sin él, el primer usuario lo es
+      // (cómodo para probar, pero en un servidor público hay que definir ADMIN_DNIS).
+      const rol = (adminsEnv.length ? adminsEnv.includes(dni) : Number(n) === 0) ? 'admin' : 'personero';
       return t.insertar(
         `INSERT INTO usuarios (dni, nombres, apellido_paterno, apellido_materno, nombre, dni_verificado, email, telefono, organizacion, password_hash, rol, creado_en)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,

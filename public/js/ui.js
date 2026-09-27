@@ -80,7 +80,16 @@ function iniciales(nombre) {
 }
 
 const logosFallidos = new Set();
-window.__logoFallo = (src) => logosFallidos.add(src);
+// Los eventos load/error de imágenes no burbujean: se escuchan en fase de captura.
+document.addEventListener('load', (e) => {
+  if (e.target.tagName === 'IMG' && e.target.parentNode?.classList?.contains('logo')) e.target.classList.add('ok');
+}, true);
+document.addEventListener('error', (e) => {
+  if (e.target.tagName === 'IMG' && e.target.parentNode?.classList?.contains('logo')) {
+    logosFallidos.add(e.target.src);
+    e.target.remove();
+  }
+}, true);
 
 /** Logo de una organización con respaldo de iniciales si la imagen no carga. */
 export function logo(org, { chico = false } = {}) {
@@ -88,7 +97,7 @@ export function logo(org, { chico = false } = {}) {
   const ini = iniciales(org?.nombre || '?');
   // Las iniciales quedan debajo; la imagen solo se muestra si carga (el JNE puede no responder).
   const img = org?.logo && !logosFallidos.has(org.logo)
-    ? html`<img src="${org.logo}" alt="" loading="lazy" onload="this.classList.add('ok')" onerror="window.__logoFallo?.(this.src);this.remove()">`
+    ? html`<img src="${org.logo}" alt="" loading="lazy">`
     : '';
   return html`<span class="${clase}" style="background:${colorDe(org?.nombre || '?')}">${ini}${img}</span>`;
 }

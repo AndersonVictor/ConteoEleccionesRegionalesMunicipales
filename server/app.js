@@ -8,6 +8,10 @@ import { rutasResultados } from './services/resultados.js';
 const PUBLIC = fileURLToPath(new URL('../public', import.meta.url));
 const SHARED = fileURLToPath(new URL('../shared', import.meta.url));
 
+// Solo se ejecuta código propio; las imágenes pueden venir de los logos del JNE.
+export const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; " +
+  "connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'";
+
 export const SERVICIOS = {
   auth: rutasAuth,
   conteo: rutasConteo,
@@ -24,6 +28,16 @@ export function crearApp({ db, secreto, servicios = Object.keys(SERVICIOS), esta
   // Solo se confía en proxies de red privada (Nginx en Docker); así nadie falsea su IP con X-Forwarded-For.
   app.set('trust proxy', process.env.TRUST_PROXY || 'loopback, linklocal, uniquelocal');
   app.disable('x-powered-by');
+  app.use((_req, res, next) => {
+    res.set({
+      'Content-Security-Policy': CSP,
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'same-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    });
+    next();
+  });
   app.use(express.json({ limit: '512kb' }));
 
   app.get('/api/salud', async (_req, res) => {
