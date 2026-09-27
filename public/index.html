@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Conteo ERM 2026</title>
+  <meta name="description" content="Conteo de votos por mesa para personeros - Elecciones Regionales y Municipales 2026">
+  <meta name="theme-color" content="#b91c2c">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/img/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/icono-192.png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div id="barra-conexion" class="barra-conexion" hidden>Sin conexión: tus votos se guardan en el celular y se enviarán al volver la señal.</div>
+  <main id="app" class="app"></main>
+  <nav id="nav" class="nav" hidden>
+    <a href="#/mesas" data-nav="mesas"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4zM4 11h16v8H4z" /></svg><span>Mis mesas</span></a>
+    <a href="#/dashboard" data-nav="dashboard"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg><span>Resultados</span></a>
+    <a href="#/admin" data-nav="admin" hidden><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" /></svg><span>Admin</span></a>
+    <a href="#/cuenta" data-nav="cuenta"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-6 8-6s8 2 8 6" /></svg><span>Cuenta</span></a>
+  </nav>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

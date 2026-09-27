@@ -1,0 +1,20 @@
+{
+  "name": "conteo-erm-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Conteo de votos por mesa para personeros - Elecciones Regionales y Municipales 2026 (Perú)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "seed": "node --disable-warning=ExperimentalWarning scripts/seed.js",
+    "sync:jne": "node --disable-warning=ExperimentalWarning scripts/sync-jne.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
