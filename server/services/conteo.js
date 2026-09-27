@@ -4,6 +4,7 @@ import { ahora } from '../lib/db.js';
 import { ARBOL_JSON, describir, esDistrito } from '../lib/ubigeo.js';
 import { agregarManual, asegurarOrganizaciones, organizacionesDeDistrito, sincronizarDistritoJNE } from '../lib/organizaciones.js';
 import { firmaConteo, recalcularMesa } from '../lib/consolidado.js';
+import { estadoJornada, limpiarDatosDePrueba } from '../lib/jornada.js';
 import { fallar, h, requiereAdmin, requiereLogin } from '../lib/http.js';
 import { ESPECIALES, SECCIONES, contar, errorObservacion, evaluarCuadre, motivoNoCierre, seccionesParaUbigeo } from '../../shared/acta.js';
 import { errorElectores, errorNumeroMesa, errorTextoLibre, mayusculas } from '../../shared/validacion.js';
@@ -12,6 +13,17 @@ const MAX_REGISTROS = 1000; // una mesa tiene como máximo 300 electores; margen
 
 export function rutasConteo({ db }) {
   const r = Router();
+
+  // ---- Jornada: cuenta regresiva y datos de prueba -------------------------
+  r.get('/api/estado', h(async (_req, res) => {
+    res.set('Cache-Control', 'no-store');
+    res.json(await estadoJornada(db));
+  }));
+
+  r.post('/api/admin/limpiar-prueba', requiereAdmin, h(async (req, res) => {
+    if (req.body?.confirmar !== 'BORRAR') fallar(400, 'Escribe BORRAR para confirmar');
+    res.json({ ok: true, limpieza: await limpiarDatosDePrueba(db, { motivo: `manual por ${req.usuario.nombre}` }) });
+  }));
 
   // ---- Ubigeo y organizaciones ------------------------------------------
   r.get('/api/ubigeo', (_req, res) => {

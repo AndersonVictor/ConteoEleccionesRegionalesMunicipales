@@ -1,7 +1,8 @@
 import { api, local, sesion } from '../api.js';
 import { SECCIONES } from '/shared/acta.js';
 import { cargarUbigeo, enlazarUbigeo, selectoresUbigeo } from '../ubigeo.js';
-import { cargando, confirmar, fmt, html, logo, titulo, toast } from '../ui.js';
+import { cargando, confirmar, fmt, html, logo, modal, titulo, toast } from '../ui.js';
+import { enModoPrueba, inicio, sincronizarJornada } from '../jornada.js';
 
 export async function vistaAdmin(app) {
   if (sesion.usuario?.rol !== 'admin') {
@@ -68,7 +69,15 @@ export async function vistaAdmin(app) {
   async function cargarActas() {
     const { actas } = await api(`/admin/actas?ubigeo=${ubigeo}`);
     const cerradas = actas.filter((a) => a.estado === 'cerrada').length;
-    setContenido(html`<div class="card stack">
+    setContenido(html`<div class="card stack" style="margin-bottom:16px">
+      <h2>Datos de prueba</h2>
+      <p class="small muted" style="margin:0">${enModoPrueba()
+        ? `Se borran automáticamente el ${inicio()?.toLocaleString('es-PE', { timeZone: 'America/Lima', dateStyle: 'full', timeStyle: 'short' })}.`
+        : 'La jornada ya empezó: borrar ahora eliminaría los conteos reales.'}
+        Se borran mesas, actas y votos; las cuentas de los personeros se conservan.</p>
+      <button class="btn peligro chico" data-accion="limpiar">Borrar todas las mesas y actas ahora</button>
+    </div>
+    <div class="card stack">
       <div class="row between"><h2>Actas</h2><span class="small muted">${fmt(cerradas)} cerradas de ${fmt(actas.length)}</span></div>
       ${actas.length ? html`<div class="tabla-scroll"><table class="tabla">
         <thead><tr><th>Mesa</th><th>Personero</th><th>Estado</th><th class="n">Cédulas</th></tr></thead>
@@ -119,6 +128,25 @@ export async function vistaAdmin(app) {
       if (tab === 'organizaciones' && ubigeo.length !== 6) ubigeo = local.get('ultimoUbigeo', '');
       pintar();
       return cargar();
+    }
+    if (e.target.closest('[data-accion=limpiar]')) {
+      const m = modal(`<form class="stack"><h2>¿Borrar todas las mesas y actas?</h2>
+        <p class="small muted" style="margin:0">No se puede deshacer. Escribe <b>BORRAR</b> para confirmar.</p>
+        <input class="input" name="c" autocomplete="off">
+        <div class="grid-2"><button type="button" class="btn suave" data-cerrar>Cancelar</button><button class="btn peligro">Borrar</button></div></form>`);
+      m.el.querySelector('form').onsubmit = async (ev) => {
+        ev.preventDefault();
+        try {
+          const r = await api('/admin/limpiar-prueba', { method: 'POST', body: { confirmar: ev.target.c.value.trim().toUpperCase() } });
+          m.cerrar();
+          toast(`Listo: se borraron ${r.limpieza.actas_borradas} actas`);
+          await sincronizarJornada({ forzar: true });
+          cargar();
+        } catch (err) {
+          toast(err.message, { error: true });
+        }
+      };
+      return;
     }
     if (e.target.closest('[data-accion=jne]')) {
       e.target.disabled = true;

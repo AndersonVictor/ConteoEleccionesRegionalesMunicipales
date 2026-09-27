@@ -519,3 +519,20 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 }
 .barra-publica img { width: 36px; height: 36px; border-radius: 10px; }
 .barra-publica small { color: var(--ink-3); }
+
+/* ---- Cuenta regresiva de la jornada ---- */
+.cuenta-regresiva {
+  border-radius: 20px; padding: 16px; margin-bottom: 16px; display: grid; gap: 12px; text-align: center;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #000));
+  color: #fff; box-shadow: var(--shadow);
+}
+.cr-titulo { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; }
+.cr-numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.cr-numeros div { background: rgb(255 255 255 / 0.14); border-radius: 14px; padding: 8px 4px; }
+.cr-numeros b { display: block; font-size: 2rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+.cr-numeros span { font-size: 0.7rem; font-weight: 700; opacity: 0.85; }
+.cr-nota { font-size: 0.82rem; line-height: 1.4; opacity: 0.95; }
+.cr-nota .chip { background: #fff; color: var(--accent); margin-right: 4px; }
+.cuenta-regresiva.compacta { padding: 12px; gap: 8px; }
+.cuenta-regresiva.compacta .cr-numeros b { font-size: 1.4rem; }
+.aviso.consejo { background: var(--sel-soft); color: var(--ink); border-left: 4px solid var(--sel); margin-bottom: 16px; }

@@ -1,5 +1,5 @@
 // Service worker: permite abrir la app sin señal (los votos ya se guardan en localStorage).
-const CACHE = 'conteo-erm-v6';
+const CACHE = 'conteo-erm-v7';
 const SHELL = [
   '/',
   '/index.html',
@@ -12,6 +12,7 @@ const SHELL = [
   '/js/ubigeo.js',
   '/js/guia.js',
   '/js/tema.js',
+  '/js/jornada.js',
   '/vendor/driver/driver.js.iife.js',
   '/vendor/driver/driver.css',
   '/js/views/login.js',

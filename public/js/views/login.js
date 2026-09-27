@@ -1,6 +1,7 @@
 import { api, sesion } from '../api.js';
 import { botonAyuda, botonTema, html, toast } from '../ui.js';
 import { guia } from '../guia.js';
+import { cuentaRegresiva } from '../jornada.js';
 import {
   errorCelular, errorDni, errorEmail, errorNombre, errorPassword, errorTextoLibre, mayusculas,
 } from '/shared/validacion.js';
@@ -122,6 +123,7 @@ export function vistaLogin(app) {
         <h1>Conteo ERM 2026</h1>
         <p>Cuenta los votos de tu mesa desde el celular</p>
       </div>
+      ${cuentaRegresiva({ compacta: true })}
       <div class="card stack">
         <div class="segmentado">
           <button data-modo="login" class="${modo === 'login' ? 'activo' : ''}">Ingresar</button>

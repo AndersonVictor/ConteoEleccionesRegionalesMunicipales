@@ -11,6 +11,7 @@ import { cargarSecreto } from './lib/auth.js';
 import { iniciarCache } from './lib/cache.js';
 import { cargarSemilla } from './lib/organizaciones.js';
 import { crearApp, SERVICIOS } from './app.js';
+import { inicioJornada, programarInicio } from './lib/jornada.js';
 
 const DATA = fileURLToPath(new URL('../data/', import.meta.url));
 
@@ -50,6 +51,12 @@ if ((!servicio || servicio === 'conteo') && process.env.SEMILLA_AL_INICIAR !== '
       console.log(`Semilla ${f}: ${c} circunscripciones`);
     }
   });
+}
+
+// Borrado automático de los datos de prueba al empezar la jornada.
+if (!servicio || servicio === 'conteo') {
+  programarInicio(db);
+  console.log(`Inicio de la jornada: ${inicioJornada().toLocaleString('es-PE', { timeZone: 'America/Lima' })} (hora de Perú). Antes de eso todo es de prueba.`);
 }
 
 const app = crearApp({

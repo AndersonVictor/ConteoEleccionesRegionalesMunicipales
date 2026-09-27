@@ -2,6 +2,8 @@ import { enviarPendientes, sesion } from './api.js';
 import { $, $$, toast } from './ui.js';
 import { cerrarGuia, guia } from './guia.js';
 import { alternarTema, aplicarTema } from './tema.js';
+import { sincronizarJornada } from './jornada.js';
+import { local } from './api.js';
 
 aplicarTema();
 import { vistaLogin } from './views/login.js';
@@ -39,6 +41,9 @@ async function enrutar() {
   }
   const [re, vista, opts] = ruta;
   const params = hash.match(re).slice(1);
+  // La primera vez se espera el estado de la jornada (cuenta regresiva); luego se actualiza en segundo plano.
+  if (local.get('jornada')) sincronizarJornada();
+  else await sincronizarJornada({ forzar: true });
   cerrarGuia();
   if (typeof limpiar === 'function') limpiar();
   limpiar = null;

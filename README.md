@@ -57,6 +57,18 @@ npm run sync:jne -- 0401     # una provincia
 npm run sync:jne -- 040112   # un distrito
 ```
 
+## Cuenta regresiva y modo prueba
+
+Hasta el **domingo 4 de octubre de 2026 a las 8:00 a. m. (hora de Perú)** la app está en **modo prueba**:
+
+- Se muestra una cuenta regresiva (días, horas, minutos y segundos) en el ingreso, en "Mis mesas" y en Resultados.
+- Las mesas y el conteo llevan la etiqueta "PRUEBA", y el dashboard avisa que los resultados son de prueba.
+- A esa hora exacta el servidor **borra automáticamente** todas las mesas, actas y votos, y los celulares borran sus copias. Las cuentas de los personeros y las organizaciones se conservan.
+- El borrado ocurre una sola vez, aunque haya varias réplicas.
+- La app recomienda que el personero, **apenas llegue a su mesa**, la registre con su número y la cantidad de electores hábiles.
+- Si hace falta, un admin puede borrar los datos de prueba antes desde **Admin → Actas**, escribiendo BORRAR para confirmar.
+- La fecha se cambia con `ELECCION_INICIO` (formato ISO, por ejemplo `2026-10-04T08:00:00-05:00`). `LIMPIEZA_AUTOMATICA=0` desactiva el borrado.
+
 ## Resultados públicos
 
 El dashboard se puede ver **sin cuenta** en `/#/resultados`. Desde la pantalla de ingreso aparece el botón "Ver resultados en vivo sin cuenta".
@@ -191,6 +203,8 @@ Ver `.env.example`. Las principales:
 | `LIMITE_LOGIN` / `LIMITE_DNI` | `100` / `60` | Intentos por IP cada 10 min (holgados por el CGNAT de las redes móviles) |
 | `DASHBOARD_CACHE_SEG` | `5` | Segundos que se reutiliza un consolidado |
 | `DASHBOARD_PUBLICO` | `1` | `0` exige iniciar sesión para ver resultados |
+| `ELECCION_INICIO` | `2026-10-04T08:00:00-05:00` | Fin del modo prueba: a esa hora se borran mesas y actas de prueba |
+| `LIMPIEZA_AUTOMATICA` | `1` | `0` desactiva el borrado automático |
 | `JNE_AUTO` | `1` | `0` desactiva la consulta automática al JNE |
 | `PORT`, `DB_PATH`, `PG_POOL_MAX` | `3000`, `data/conteo.db`, `20` | Puerto, archivo SQLite y conexiones a Postgres por réplica |
 

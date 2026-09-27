@@ -2,6 +2,7 @@ import { actaLocal, alCambiarSync, api, guardarActaLocal, local } from '../api.j
 import { ESPECIALES, SECCIONES, contar, motivoTope } from '/shared/acta.js';
 import { $, botonAyuda, cargando, confirmar, fmt, html, iconos, logo, logoEspecial, modal, palitos, titulo, toast, vibrar } from '../ui.js';
 import { guia } from '../guia.js';
+import { enModoPrueba } from '../jornada.js';
 
 const CORTOS = { regional: 'Gob.', consejero: 'Cons.', provincial: 'Prov.', distrital: 'Dist.' };
 const nuevoId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
@@ -84,7 +85,7 @@ export async function vistaConteo(app, id) {
       <div class="row">
         <a class="btn-icono" href="#/mesas" aria-label="Volver">${iconos.atras}</a>
         <div class="grow">
-          <div style="font-weight:800">Mesa ${acta.mesa.numero}</div>
+          <div style="font-weight:800">Mesa ${acta.mesa.numero} ${enModoPrueba() ? html`<span class="chip warn">PRUEBA</span>` : ''}</div>
           <div class="small muted ellipsis">${titulo(acta.mesa.distrito)} · ${titulo(acta.mesa.provincia)}</div>
           <span class="sync ${sync === 'ok' ? 'ok' : 'pendiente'}" id="sync">${txtSync}</span>
         </div>

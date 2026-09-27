@@ -7,6 +7,7 @@ import { readFileSync } from 'node:fs';
 import { abrirDB } from '../server/lib/db.js';
 import { crearApp } from '../server/app.js';
 import { cargarSemilla, sincronizarDistritoJNE, organizacionesDeDistrito } from '../server/lib/organizaciones.js';
+import { revisarInicio } from '../server/lib/jornada.js';
 
 process.env.JNE_AUTO = '0';
 process.env.DASHBOARD_CACHE_SEG = '0';
@@ -322,6 +323,38 @@ for (const [motor, opciones] of motores) {
       assert.equal((await llamar(`/circunscripcion/${org.circ_id}`, { method: 'DELETE', token: otro.token })).status, 403);
       assert.equal((await llamar(`/circunscripcion/${org.circ_id}`, { method: 'DELETE', token: u.token })).status, 200);
       assert.equal((await llamar('/admin/usuarios', { token: u.token })).status, 403);
+    });
+
+    test('jornada: cuenta regresiva y borrado de datos de prueba a la hora de inicio', async () => {
+      process.env.ELECCION_INICIO = new Date(Date.now() + 3600e3).toISOString();
+      try {
+        let e = await llamar('/estado');
+        assert.equal(e.modo_prueba, true);
+        assert.equal(e.limpieza, null);
+        const { n: mesasAntes } = await db.get('SELECT COUNT(*) AS n FROM mesas');
+        assert.ok(Number(mesasAntes) > 0);
+        assert.equal(await revisarInicio(db), null, 'antes de la hora no borra nada');
+
+        process.env.ELECCION_INICIO = new Date(Date.now() - 1000).toISOString();
+        const r = await revisarInicio(db);
+        assert.ok(r.actas_borradas > 0);
+        assert.equal(await revisarInicio(db), null, 'solo una vez');
+        for (const t of ['mesas', 'actas', 'votos_mesa']) assert.equal(Number((await db.get(`SELECT COUNT(*) AS n FROM ${t}`)).n), 0, t);
+        assert.ok(Number((await db.get('SELECT COUNT(*) AS n FROM usuarios')).n) > 0, 'las cuentas se conservan');
+        assert.ok(Number((await db.get('SELECT COUNT(*) AS n FROM organizaciones')).n) > 0);
+
+        e = await llamar('/estado');
+        assert.equal(e.modo_prueba, false);
+        assert.equal(e.limpieza.id, r.id);
+        // Tras la limpieza se puede volver a registrar una mesa que antes se usó de prueba.
+        const u = await llamar('/auth/login', { method: 'POST', body: { usuario: '10000001', password: 'secreto123' } });
+        const nueva = await llamar('/actas', { method: 'POST', token: u.token, body: { numero: '123456', ubigeo: '040101', electores_habiles: 250 } });
+        assert.equal(nueva.status, 201);
+        // Borrado manual solo para admin y con confirmación.
+        assert.equal((await llamar('/admin/limpiar-prueba', { method: 'POST', token: u.token, body: { confirmar: 'BORRAR' } })).status, 403);
+      } finally {
+        delete process.env.ELECCION_INICIO;
+      }
     });
 
     test('sincronización con el JNE (respuesta simulada)', async () => {

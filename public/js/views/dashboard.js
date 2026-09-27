@@ -2,6 +2,7 @@ import { api, local, sesion } from '../api.js';
 import { cargarUbigeo, enlazarUbigeo, selectoresUbigeo } from '../ubigeo.js';
 import { botonAyuda, botonTema, cargando, fmt, html, iconos, logo, pct, titulo, toast } from '../ui.js';
 import { guia } from '../guia.js';
+import { cuentaRegresiva, enModoPrueba } from '../jornada.js';
 
 const REFRESCO_MS = 20000;
 
@@ -121,6 +122,8 @@ export async function vistaDashboard(app, query = '') {
         <button class="btn-icono" data-accion="compartir" aria-label="Compartir enlace">${iconos.compartir}</button>
         <button class="btn-icono" data-accion="refrescar" aria-label="Actualizar">${iconos.refrescar}</button>
       </div>
+      ${cuentaRegresiva({ compacta: true })}
+      ${enModoPrueba() ? html`<div class="aviso warn" style="margin-bottom:16px">Los resultados que ves ahora son <b>de prueba</b>: se borrarán al empezar la jornada.</div>` : ''}
       <div class="stack-lg">
         <details class="card" ${ubigeo ? '' : 'open'}>
           <summary style="cursor:pointer;font-weight:700">Ámbito: ${d ? nombreAmbito(d.ambito) : '—'}</summary>

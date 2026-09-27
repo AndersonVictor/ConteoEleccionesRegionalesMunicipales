@@ -108,6 +108,12 @@ CREATE TABLE IF NOT EXISTS votos_mesa (
   PRIMARY KEY (mesa_id, tipo, seccion, opcion)
 );
 
+-- Ajustes del sistema (p. ej. si ya se borraron los datos de prueba).
+CREATE TABLE IF NOT EXISTS config (
+  clave TEXT PRIMARY KEY,
+  valor TEXT NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_mesas_ubigeo ON mesas(ubigeo);
 CREATE INDEX IF NOT EXISTS idx_actas_mesa ON actas(mesa_id);
 CREATE INDEX IF NOT EXISTS idx_actas_usuario ON actas(usuario_id);

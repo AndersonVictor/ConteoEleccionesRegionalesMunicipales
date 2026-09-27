@@ -2,6 +2,7 @@ import { actaLocal, api, local, sesion } from '../api.js';
 import { SECCIONES } from '/shared/acta.js';
 import { botonAyuda, cargando, fmt, html, iconos, titulo, toast } from '../ui.js';
 import { guia } from '../guia.js';
+import { cuentaRegresiva, enModoPrueba, recomendacionLlegada } from '../jornada.js';
 
 export async function vistaMesas(app) {
   app.innerHTML = String(cargando());
@@ -25,6 +26,8 @@ export async function vistaMesas(app) {
       ${botonAyuda('mesas')}
       <a class="btn primario chico" href="#/mesa/nueva" data-guia="nueva-mesa">${iconos.mas} Mesa</a>
     </div>
+    ${cuentaRegresiva()}
+    ${recomendacionLlegada()}
     ${actas.length
       ? html`<div class="stack" data-guia="lista-mesas">${actas.map((a) => {
           const l = actaLocal(a.id);
