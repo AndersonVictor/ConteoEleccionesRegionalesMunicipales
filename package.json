@@ -13,7 +13,8 @@
     "seed": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/seed.js",
     "sync:jne": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/sync-jne.js",
     "carga": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/carga.js",
-    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 test/*.test.js"
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 test/*.test.js",
+    "probar:dni": "node --env-file-if-exists=.env scripts/probar-dni.js"
   },
   "dependencies": {
     "express": "^4.21.2",

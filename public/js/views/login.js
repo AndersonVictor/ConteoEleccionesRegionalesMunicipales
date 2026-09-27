@@ -98,10 +98,12 @@ export function vistaLogin(app) {
         fijarNombres(form, r, true);
         form.telefono.focus();
       } else {
-        const msg = r.motivo === 'no_encontrado'
-          ? 'No encontramos tu DNI. Escribe tus nombres y apellidos tal como figuran en tu DNI.'
-          : 'No se pudo verificar el DNI ahora. Escribe tus nombres y apellidos tal como figuran en tu DNI.';
-        estado.innerHTML = `<div class="estado-dni warn">${msg}</div>`;
+        const msg = {
+          no_encontrado: 'No encontramos tu DNI en RENIEC.',
+          no_configurado: 'La consulta de DNI no está activada en el servidor (falta el token de Decolecta).',
+          token_invalido: 'El token de Decolecta del servidor no es válido o no tiene saldo.',
+        }[r.motivo] || 'No se pudo consultar RENIEC en este momento.';
+        estado.innerHTML = `<div class="estado-dni warn">${msg} Escribe tus nombres y apellidos tal como figuran en tu DNI.</div>`;
         fijarNombres(form, null, false);
         form.nombres.focus();
       }

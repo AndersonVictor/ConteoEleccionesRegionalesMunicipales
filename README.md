@@ -72,6 +72,13 @@ npm run sync:jne -- 040112   # un distrito
   - Número de mesa de 6 dígitos y como máximo 300 electores hábiles.
   - Local de votación, organización y observaciones en mayúsculas.
 
+### Activar la consulta de DNI
+
+1. Crea tu token en [decolecta.com](https://decolecta.com).
+2. En la carpeta del proyecto: `cp .env.example .env` y edita la línea `DECOLECTA_TOKEN=tu_token`.
+3. Prueba el token: `npm run probar:dni -- 12345678`. Debe responder `HTTP 200` con nombres.
+4. Reinicia con `npm start`. Al arrancar debe decir `Consulta de DNI (Decolecta): ACTIVADA`.
+
 ## Guías de uso
 
 Cada pantalla muestra una guía paso a paso ([driver.js](https://driverjs.com)) la primera vez que se abre: registro, mis mesas, registrar mesa, conteo por cédula (explica las pestañas de las elecciones), conteo por elección, cuadre y resultados. El botón **?** la repite, y en "Mi cuenta" se pueden volver a activar todas.

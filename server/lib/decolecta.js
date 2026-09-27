@@ -47,10 +47,13 @@ export async function consultarDni(db, dni, { fetchImpl = fetch } = {}) {
     });
     if (r.status === 404 || r.status === 422) return { encontrado: false, motivo: 'no_encontrado' };
     if (r.status === 401 || r.status === 403) {
-      console.error('[decolecta] token inválido o sin saldo');
+      console.error(`[decolecta] ${r.status}: token inválido o sin saldo. Revisa DECOLECTA_TOKEN en .env`);
+      return { encontrado: false, motivo: 'token_invalido' };
+    }
+    if (!r.ok) {
+      console.error(`[decolecta] respondió ${r.status}: ${(await r.text().catch(() => '')).slice(0, 200)}`);
       return { encontrado: false, motivo: 'no_disponible' };
     }
-    if (!r.ok) return { encontrado: false, motivo: 'no_disponible' };
     const datos = interpretar(await r.json());
     if (!datos) return { encontrado: false, motivo: 'no_encontrado' };
     await db.run(

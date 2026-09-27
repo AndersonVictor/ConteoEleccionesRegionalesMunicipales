@@ -25,6 +25,11 @@ if (servicio && !process.env.SECRET) {
 
 const db = await abrirDB({ ruta: process.env.DB_PATH || `${DATA}conteo.db` });
 if (await iniciarCache()) console.log('Caché compartida en Redis');
+if (!servicio || servicio === 'auth') {
+  console.log(process.env.DECOLECTA_TOKEN
+    ? 'Consulta de DNI (Decolecta): ACTIVADA'
+    : 'Consulta de DNI (Decolecta): DESACTIVADA. Pon DECOLECTA_TOKEN=... en el archivo .env y reinicia.');
+}
 const secreto = cargarSecreto(process.env.SECRET_PATH || `${DATA}secret.key`);
 
 // Primera vez: carga las organizaciones incluidas en data/seed.
