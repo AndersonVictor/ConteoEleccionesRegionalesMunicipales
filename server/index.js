@@ -70,6 +70,15 @@ const server = app.listen(puerto, process.env.HOST || '0.0.0.0', () => {
   console.log(`Conteo ERM 2026 [${servicio || 'todo en uno'}] en http://localhost:${puerto} (base: ${db.motor})`);
 });
 server.keepAliveTimeout = 65000;
+server.on('error', (e) => {
+  if (e.code === 'EADDRINUSE') {
+    console.error(`\nEl puerto ${puerto} ya está en uso: seguramente la app ya está corriendo en otra ventana de la Terminal.`);
+    console.error(`Ciérrala con Ctrl + C, o ejecuta:  lsof -ti :${puerto} | xargs kill   y vuelve a correr npm start.`);
+    console.error(`También puedes usar otro puerto:  PORT=3001 npm start\n`);
+    process.exit(1);
+  }
+  throw e;
+});
 
 // Apagado ordenado (Docker/Kubernetes envían SIGTERM al reemplazar réplicas).
 for (const sig of ['SIGTERM', 'SIGINT']) {
