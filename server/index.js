@@ -4,7 +4,7 @@
 //   SERVICIO=conteo npm start      -> solo mesas y actas
 //   SERVICIO=resultados npm start  -> solo el dashboard
 // Con DATABASE_URL usa PostgreSQL; con REDIS_URL comparte caché y límites entre réplicas.
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { abrirDB } from './lib/db.js';
 import { cargarSecreto } from './lib/auth.js';
@@ -13,6 +13,13 @@ import { cargarSemilla } from './lib/organizaciones.js';
 import { crearApp, SERVICIOS } from './app.js';
 
 const DATA = fileURLToPath(new URL('../data/', import.meta.url));
+
+// Lee el archivo .env de la carpeta del proyecto aunque el servidor se inicie sin `npm start`.
+const ENV = fileURLToPath(new URL('../.env', import.meta.url));
+if (existsSync(ENV)) {
+  process.loadEnvFile(ENV);
+  console.log(`Configuración cargada de ${ENV}`);
+}
 const servicio = process.env.SERVICIO || '';
 if (servicio && !SERVICIOS[servicio]) {
   console.error(`SERVICIO desconocido: ${servicio}. Usa ${Object.keys(SERVICIOS).join(', ')}`);
