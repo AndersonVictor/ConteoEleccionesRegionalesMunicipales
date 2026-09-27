@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 
-const RUTA = new URL('../data/ubigeo.json', import.meta.url);
+const RUTA = new URL('../../data/ubigeo.json', import.meta.url);
 
 export const ARBOL = JSON.parse(readFileSync(RUTA, 'utf8'));
 export const ARBOL_JSON = JSON.stringify(ARBOL);

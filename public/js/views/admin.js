@@ -89,7 +89,8 @@ export async function vistaAdmin(app) {
       <div class="tabla-scroll"><table class="tabla">
         <thead><tr><th>Nombre</th><th class="n">Actas</th><th>Rol</th></tr></thead>
         <tbody>${usuarios.map((u) => html`<tr>
-          <td><b>${u.nombre}</b><div class="small muted">DNI ${u.dni} · ${u.email}${u.telefono ? ` · ${u.telefono}` : ''}</div>
+          <td><b>${u.nombre}</b> ${u.dni_verificado ? html`<span class="chip ok verif" title="Verificado con RENIEC"></span>` : ''}
+            <div class="small muted">DNI ${u.dni}${u.telefono ? ` · ${u.telefono}` : ''}${u.email ? ` · ${u.email}` : ''}</div>
             ${u.organizacion ? html`<div class="small muted">${u.organizacion}</div>` : ''}</td>
           <td class="n">${fmt(u.cerradas)}/${fmt(u.actas)}</td>
           <td><select class="input" style="min-height:36px;padding:4px 8px" data-rol="${u.id}">

@@ -1,5 +1,5 @@
 // Service worker: permite abrir la app sin señal (los votos ya se guardan en localStorage).
-const CACHE = 'conteo-erm-v1';
+const CACHE = 'conteo-erm-v2';
 const SHELL = [
   '/',
   '/index.html',
@@ -10,6 +10,9 @@ const SHELL = [
   '/js/api.js',
   '/js/ui.js',
   '/js/ubigeo.js',
+  '/js/guia.js',
+  '/vendor/driver/driver.js.iife.js',
+  '/vendor/driver/driver.css',
   '/js/views/login.js',
   '/js/views/mesas.js',
   '/js/views/nueva-mesa.js',
@@ -19,6 +22,7 @@ const SHELL = [
   '/js/views/admin.js',
   '/js/views/cuenta.js',
   '/shared/acta.js',
+  '/shared/validacion.js',
 ];
 
 self.addEventListener('install', (e) => {

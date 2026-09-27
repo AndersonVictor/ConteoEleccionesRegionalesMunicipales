@@ -1,12 +1,14 @@
-import { createHmac, randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
+import { createHmac, randomBytes, scrypt, timingSafeEqual } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { promisify } from 'node:util';
 
+const scryptAsync = promisify(scrypt);
 const DURACION_TOKEN_MS = 1000 * 60 * 60 * 24 * 30; // 30 días: el personero no debe perder la sesión el día de la elección
 
 export function cargarSecreto(ruta) {
   if (process.env.SECRET) return process.env.SECRET;
-  if (ruta === ':memory:') return randomBytes(32).toString('hex');
+  if (!ruta || ruta === ':memory:') return randomBytes(32).toString('hex');
   if (existsSync(ruta)) return readFileSync(ruta, 'utf8').trim();
   mkdirSync(dirname(ruta), { recursive: true });
   const s = randomBytes(32).toString('hex');
@@ -14,17 +16,18 @@ export function cargarSecreto(ruta) {
   return s;
 }
 
-export function hashPassword(password) {
+// scrypt asíncrono: no bloquea el proceso mientras se registran o ingresan muchos personeros.
+export async function hashPassword(password) {
   const salt = randomBytes(16);
-  const hash = scryptSync(password, salt, 64);
+  const hash = await scryptAsync(password, salt, 64);
   return `${salt.toString('hex')}:${hash.toString('hex')}`;
 }
 
-export function verificarPassword(password, guardado) {
+export async function verificarPassword(password, guardado) {
   const [saltHex, hashHex] = String(guardado).split(':');
   if (!saltHex || !hashHex) return false;
   const esperado = Buffer.from(hashHex, 'hex');
-  const hash = scryptSync(password, Buffer.from(saltHex, 'hex'), esperado.length);
+  const hash = await scryptAsync(password, Buffer.from(saltHex, 'hex'), esperado.length);
   return timingSafeEqual(hash, esperado);
 }
 
@@ -49,18 +52,4 @@ export function leerToken(secreto, token) {
   } catch {
     return null;
   }
-}
-
-/** Limitador simple en memoria para login/registro (por IP). */
-export function limitador({ ventanaMs = 10 * 60 * 1000, max = 30 } = {}) {
-  const hits = new Map();
-  return (req, res, next) => {
-    const ahora = Date.now();
-    const clave = req.ip;
-    const h = (hits.get(clave) || []).filter((t) => ahora - t < ventanaMs);
-    h.push(ahora);
-    hits.set(clave, h);
-    if (h.length > max) return res.status(429).json({ error: 'Demasiados intentos. Espera unos minutos.' });
-    next();
-  };
 }

@@ -41,9 +41,10 @@ export const sesion = {
 };
 
 export class ErrorApi extends Error {
-  constructor(status, msg) {
+  constructor(status, msg, datos = {}) {
     super(msg);
     this.status = status;
+    this.datos = datos;
   }
 }
 
@@ -62,13 +63,16 @@ export async function api(ruta, { method = 'GET', body } = {}) {
     sesion.salir();
     location.hash = '#/login';
   }
-  if (!r.ok) throw new ErrorApi(r.status, datos.error || `Error ${r.status}`);
+  if (!r.ok) throw new ErrorApi(r.status, datos.error || `Error ${r.status}`, datos);
   return datos;
 }
 
 // ---- Actas con respaldo local ------------------------------------------
 // Cada cambio se guarda primero en el celular y luego se envía al servidor.
 // Si no hay señal, queda marcado como pendiente y se reintenta.
+// Los toques se agrupan: se envía como máximo una vez cada pocos segundos por acta, lo que
+// reduce muchísimo la carga del servidor cuando miles de personeros cuentan a la vez.
+const ESPERA_ENVIO_MS = 3000;
 
 const temporizadores = new Map();
 const oyentes = new Set();
@@ -84,13 +88,35 @@ export function guardarActaLocal(id, datos, { pendiente = true } = {}) {
   if (pendiente) programarEnvio(id);
 }
 
-function programarEnvio(id, ms = 700, estado = 'pendiente') {
-  clearTimeout(temporizadores.get(id));
+function programarEnvio(id, ms = ESPERA_ENVIO_MS, estado = 'pendiente', reprogramar = false) {
   avisar(id, estado);
-  temporizadores.set(id, setTimeout(() => enviarActa(id).catch(() => {}), ms));
+  // Si ya hay un envío programado, ese envío llevará también este cambio (no se posterga).
+  if (temporizadores.has(id) && !reprogramar) return;
+  clearTimeout(temporizadores.get(id));
+  temporizadores.set(id, setTimeout(() => {
+    temporizadores.delete(id);
+    enviarActa(id).catch(() => {});
+  }, ms));
 }
 
+const enCurso = new Map(); // un solo envío a la vez por acta, para que no lleguen desordenados
+
 export async function enviarActa(id) {
+  if (enCurso.has(id)) {
+    // Espera el envío actual y luego manda lo que haya cambiado mientras tanto.
+    await enCurso.get(id).catch(() => {});
+    return enviarActa(id);
+  }
+  const p = enviarActaAhora(id);
+  enCurso.set(id, p);
+  try {
+    return await p;
+  } finally {
+    enCurso.delete(id);
+  }
+}
+
+async function enviarActaAhora(id) {
   const l = actaLocal(id);
   if (!l?.pendiente) return null;
   try {
@@ -106,8 +132,9 @@ export async function enviarActa(id) {
     }
     return acta;
   } catch (e) {
-    if (e.status === 0) {
-      programarEnvio(id, 15000, navigator.onLine ? 'error' : 'offline');
+    if (e.status === 0 || e.status === 429 || e.status >= 500) {
+      // Sin señal o servidor saturado: se reintenta con espera aleatoria para no llegar todos juntos.
+      programarEnvio(id, 10000 + Math.random() * 10000, navigator.onLine ? 'error' : 'offline', true);
     } else {
       avisar(id, 'error');
       if (e.status === 409) local.set(`acta:${id}`, { ...l, pendiente: false });

@@ -1,13 +1,14 @@
 // Carga organizaciones políticas desde data/seed/*.json a la base de datos.
 // Uso: npm run seed                 (carga todos los archivos de data/seed)
 //      npm run seed -- arequipa     (solo data/seed/arequipa.json)
+// Usa DATABASE_URL (Postgres) si está definida; si no, data/conteo.db.
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { abrirDB } from '../server/db.js';
-import { cargarSemilla } from '../server/organizaciones.js';
+import { abrirDB } from '../server/lib/db.js';
+import { cargarSemilla } from '../server/lib/organizaciones.js';
 
 const DATA = fileURLToPath(new URL('../data/', import.meta.url));
-const db = abrirDB(process.env.DB_PATH || `${DATA}conteo.db`);
+const db = await abrirDB({ ruta: process.env.DB_PATH || `${DATA}conteo.db` });
 const filtro = process.argv[2];
 const archivos = readdirSync(`${DATA}seed`).filter((f) => f.endsWith('.json') && (!filtro || f === `${filtro}.json`));
 if (!archivos.length) {
@@ -15,6 +16,7 @@ if (!archivos.length) {
   process.exit(1);
 }
 for (const f of archivos) {
-  const n = cargarSemilla(db, JSON.parse(readFileSync(`${DATA}seed/${f}`, 'utf8')));
+  const n = await cargarSemilla(db, JSON.parse(readFileSync(`${DATA}seed/${f}`, 'utf8')));
   console.log(`${f}: ${n} circunscripciones cargadas`);
 }
+await db.cerrar();

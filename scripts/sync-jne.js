@@ -6,12 +6,12 @@
 //      npm run sync:jne -- 0401      (solo provincia de Arequipa)
 //      npm run sync:jne -- 040112    (un distrito)
 import { fileURLToPath } from 'node:url';
-import { abrirDB } from '../server/db.js';
-import { ARBOL } from '../server/ubigeo.js';
-import { sincronizarDistritoJNE } from '../server/organizaciones.js';
+import { abrirDB } from '../server/lib/db.js';
+import { ARBOL } from '../server/lib/ubigeo.js';
+import { sincronizarDistritoJNE } from '../server/lib/organizaciones.js';
 
 const DATA = fileURLToPath(new URL('../data/', import.meta.url));
-const db = abrirDB(process.env.DB_PATH || `${DATA}conteo.db`);
+const db = await abrirDB({ ruta: process.env.DB_PATH || `${DATA}conteo.db` });
 const prefijo = String(process.argv[2] || '');
 const pausaMs = Number(process.env.PAUSA_MS || 1200);
 if (!/^\d{2}(\d{2}(\d{2})?)?$/.test(prefijo)) {
@@ -35,3 +35,4 @@ for (const [i, x] of distritos.entries()) {
   await new Promise((r) => setTimeout(r, pausaMs));
 }
 console.log(`Listo: ${ok}/${distritos.length} distritos sincronizados.`);
+await db.cerrar();

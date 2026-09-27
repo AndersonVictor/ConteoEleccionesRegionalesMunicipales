@@ -1,6 +1,7 @@
 import { actaLocal, alCambiarSync, api, guardarActaLocal, local } from '../api.js';
 import { ESPECIALES, SECCIONES, contar } from '/shared/acta.js';
-import { $, cargando, confirmar, fmt, html, iconos, logo, logoEspecial, modal, palitos, titulo, toast, vibrar } from '../ui.js';
+import { $, botonAyuda, cargando, confirmar, fmt, html, iconos, logo, logoEspecial, modal, palitos, titulo, toast, vibrar } from '../ui.js';
+import { guia } from '../guia.js';
 
 const nuevoId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
 
@@ -73,9 +74,10 @@ export async function vistaConteo(app, id) {
           <div class="small muted ellipsis">${titulo(acta.mesa.distrito)} · ${titulo(acta.mesa.provincia)}</div>
           <span class="sync ${sync === 'ok' ? 'ok' : 'pendiente'}" id="sync">${txtSync}</span>
         </div>
+        ${botonAyuda(modo === 'cedula' ? 'conteo' : 'conteo-seccion')}
         <div class="contador"><b class="num" id="contador">${fmt(cedulas)}</b><span>de ${fmt(acta.mesa.electores_habiles)}</span></div>
       </div>
-      <div class="segmentado" style="margin-top:10px">
+      <div class="segmentado" style="margin-top:10px" data-guia="modo">
         <button data-accion="modo" data-modo="cedula" class="${modo === 'cedula' ? 'activo' : ''}">Por cédula</button>
         <button data-accion="modo" data-modo="seccion" class="${modo === 'seccion' ? 'activo' : ''}">Por elección</button>
       </div>
@@ -100,7 +102,7 @@ export async function vistaConteo(app, id) {
     const orgs = orgsDe(s);
     return html`
       <div class="pasos">${secciones.map((x, i) => html`<button class="paso ${i === paso ? 'actual' : ''} ${seleccion[x] ? 'lleno' : ''}" data-accion="paso" data-i="${i}">
-        <span class="t">${i + 1}. ${SECCIONES[x].abrev}</span>
+        <span class="t">${SECCIONES[x].abrev}</span>
         <span class="v">${seleccion[x] ? titulo(nombreOpcion(x, seleccion[x])) : html`<span class="muted">Elegir</span>`}</span>
       </button>`)}</div>
       ${repetibles.length ? html`<button class="btn suave bloque chico" data-accion="repetir" style="margin-bottom:12px">
@@ -126,8 +128,8 @@ export async function vistaConteo(app, id) {
       <div class="barra-accion"><div class="dentro row">
         <button class="btn-icono" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}</button>
         <button class="btn primario registrar" data-accion="registrar" ${completa ? '' : 'disabled'}>
-          ${completa ? `Registrar cédula #${fmt(acta.registros.length + 1)}` : `Marca ${secciones.filter((x) => !seleccion[x]).length} elección(es) más`}</button>
-        <a class="btn-icono" href="#/acta/${id}/resumen" aria-label="Resumen y cuadre">${iconos.lista}</a>
+          ${completa ? `Registrar cédula #${fmt(acta.registros.length + 1)}` : (secciones.filter((x) => !seleccion[x]).length === 1 ? 'Falta 1 elección' : `Faltan ${secciones.filter((x) => !seleccion[x]).length} elecciones`)}</button>
+        <a class="btn-icono" href="#/acta/${id}/resumen" aria-label="Resumen y cuadre" data-guia="resumen">${iconos.lista}</a>
       </div></div>`;
   }
 
@@ -145,7 +147,7 @@ export async function vistaConteo(app, id) {
   function vistaSeccion(conteo) {
     const orgs = orgsDe(tab);
     return html`
-      <div class="segmentado" style="margin:12px 0;overflow-x:auto">${secciones.map((s) => html`<button data-accion="tab" data-s="${s}" class="${s === tab ? 'activo' : ''}">
+      <div class="segmentado" style="margin:12px 0;overflow-x:auto" data-guia="tabs-seccion">${secciones.map((s) => html`<button data-accion="tab" data-s="${s}" class="${s === tab ? 'activo' : ''}">
         ${SECCIONES[s].corto}<br><small class="num">${conteo[s].total}</small></button>`)}</div>
       <h2 style="margin-bottom:10px">${SECCIONES[tab].titulo}</h2>
       ${orgs.length ? '' : sinOrganizaciones(tab)}
@@ -156,7 +158,7 @@ export async function vistaConteo(app, id) {
       ${orgs.length ? html`<button class="btn chico suave" data-accion="agregar-org" data-seccion="${tab}" style="margin-top:12px">${iconos.mas} Falta una organización</button>` : ''}
       <div class="barra-accion"><div class="dentro row">
         <button class="btn-icono" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}</button>
-        <a class="btn primario registrar" href="#/acta/${id}/resumen">Resumen y cuadre</a>
+        <a class="btn primario registrar" href="#/acta/${id}/resumen" data-guia="resumen">Resumen y cuadre</a>
       </div></div>`;
   }
 
@@ -203,6 +205,8 @@ export async function vistaConteo(app, id) {
       modo = b.dataset.modo;
       local.set('modoPreferido', modo);
       persistir();
+      pintar();
+      return guia(modo === 'cedula' ? 'conteo' : 'conteo-seccion');
     } else if (accion === 'paso') {
       paso = Number(b.dataset.i);
     } else if (accion === 'elegir') {
@@ -267,6 +271,7 @@ export async function vistaConteo(app, id) {
     }
   });
   pintar();
+  guia(modo === 'cedula' ? 'conteo' : 'conteo-seccion');
   return () => {
     app.removeEventListener('click', alClick);
     quitarSync();

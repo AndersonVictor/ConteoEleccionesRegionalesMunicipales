@@ -1,6 +1,7 @@
 import { actaLocal, api, local, sesion } from '../api.js';
 import { SECCIONES } from '/shared/acta.js';
-import { cargando, fmt, html, iconos, titulo, toast } from '../ui.js';
+import { botonAyuda, cargando, fmt, html, iconos, titulo, toast } from '../ui.js';
+import { guia } from '../guia.js';
 
 export async function vistaMesas(app) {
   app.innerHTML = String(cargando());
@@ -21,10 +22,11 @@ export async function vistaMesas(app) {
         <h1>Mis mesas</h1>
         <div class="sub">Hola, ${titulo(u?.nombre?.split(' ')[0] || '')}. ${actas.length ? 'Toca una mesa para seguir contando.' : 'Registra la mesa donde eres personero.'}</div>
       </div>
-      <a class="btn primario chico" href="#/mesa/nueva">${iconos.mas} Mesa</a>
+      ${botonAyuda('mesas')}
+      <a class="btn primario chico" href="#/mesa/nueva" data-guia="nueva-mesa">${iconos.mas} Mesa</a>
     </div>
     ${actas.length
-      ? html`<div class="stack">${actas.map((a) => {
+      ? html`<div class="stack" data-guia="lista-mesas">${actas.map((a) => {
           const l = actaLocal(a.id);
           const cedulas = l?.acta?.registros?.length ?? a.cedulas;
           const pendiente = l?.pendiente;
@@ -60,4 +62,5 @@ export async function vistaMesas(app) {
         <li>Cierra el acta: tu resultado se suma al consolidado de la región, provincia y distrito.</li>
       </ol>
     </div>`);
+  guia('mesas');
 }

@@ -1,7 +1,9 @@
 import { api, local } from '../api.js';
 import { seccionesParaUbigeo, SECCIONES } from '/shared/acta.js';
 import { cargarUbigeo, enlazarUbigeo, selectoresUbigeo } from '../ubigeo.js';
-import { html, iconos, titulo, toast } from '../ui.js';
+import { botonAyuda, html, iconos, titulo, toast } from '../ui.js';
+import { guia } from '../guia.js';
+import { MAX_ELECTORES_MESA, errorElectores, errorNumeroMesa, errorTextoLibre, mayusculas } from '/shared/validacion.js';
 
 export async function vistaNuevaMesa(app) {
   await cargarUbigeo();
@@ -14,6 +16,7 @@ export async function vistaNuevaMesa(app) {
       <div class="encabezado">
         <a class="btn-icono" href="#/mesas" aria-label="Volver">${iconos.atras}</a>
         <div class="titulos"><h1>Registrar mesa</h1><div class="sub">Datos del acta de tu mesa de sufragio</div></div>
+        ${botonAyuda('nueva-mesa')}
       </div>
       <form id="form" class="stack-lg" novalidate>
         <div class="card stack">
@@ -25,10 +28,10 @@ export async function vistaNuevaMesa(app) {
         <div class="card stack" id="datos-mesa">
           ${selectoresUbigeo(ubigeo)}
           <label class="campo"><span>Local de votación <small class="muted">(opcional)</small></span>
-            <input class="input" name="local_votacion" placeholder="Ej. I.E. San Martín de Porres"></label>
+            <input class="input mayus" name="local_votacion" maxlength="120" placeholder="Ej. I.E. San Martín de Porres"></label>
           <label class="campo"><span>Electores hábiles de la mesa</span>
-            <input class="input" name="electores_habiles" inputmode="numeric" value="300" required>
-            <div class="ayuda">Está en la lista de electores (normalmente hasta 300).</div></label>
+            <input class="input num" name="electores_habiles" inputmode="numeric" maxlength="3" value="${MAX_ELECTORES_MESA}" required>
+            <div class="ayuda">Está en la lista de electores (máximo ${MAX_ELECTORES_MESA}).</div></label>
           ${secciones.length ? html`<div class="aviso">
             <b>Esta cédula tiene ${secciones.length} elecciones:</b>
             <div class="small" style="margin-top:4px">${secciones.map((s) => SECCIONES[s].titulo).join(' · ')}</div>
@@ -46,6 +49,12 @@ export async function vistaNuevaMesa(app) {
       for (const [k, v] of Object.entries(valores)) if (nuevo[k]) nuevo[k].value = v;
     });
 
+    form.electores_habiles.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/\D/g, ''); });
+    form.local_votacion.addEventListener('input', (e) => {
+      const pos = e.target.selectionStart;
+      e.target.value = e.target.value.toUpperCase();
+      e.target.setSelectionRange?.(pos, pos);
+    });
     form.numero.addEventListener('input', async (e) => {
       e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6);
       existente = null;
@@ -68,8 +77,12 @@ export async function vistaNuevaMesa(app) {
     form.onsubmit = async (e) => {
       e.preventDefault();
       const datos = Object.fromEntries(new FormData(form));
-      if (!/^\d{6}$/.test(datos.numero)) return toast('El número de mesa tiene 6 dígitos', { error: true });
-      if (!existente && ubigeo.length !== 6) return toast('Selecciona el distrito de la mesa', { error: true });
+      const error = errorNumeroMesa(datos.numero)
+        || (!existente && ubigeo.length !== 6 ? 'Selecciona el distrito de la mesa' : null)
+        || (!existente && errorElectores(datos.electores_habiles))
+        || (!existente && errorTextoLibre(datos.local_votacion, 'El local de votación'));
+      if (error) return toast(error, { error: true });
+      datos.local_votacion = mayusculas(datos.local_votacion);
       const btn = form.querySelector('[type=submit]');
       btn.disabled = true;
       try {
@@ -86,4 +99,5 @@ export async function vistaNuevaMesa(app) {
     };
   };
   pintar();
+  guia('nueva-mesa');
 }

@@ -55,3 +55,19 @@ test('cuadre: sin total de votantes no cierra', () => {
   const r = evaluarCuadre({ registros: [ced('1', '1', '1', '1')], secciones: S, totalVotantes: null, electoresHabiles: 300 });
   assert.equal(r.ok, false);
 });
+
+import { errorCelular, errorNombre, errorPassword, mayusculas, nombreCompleto } from '../shared/validacion.js';
+
+test('validaciones compartidas', () => {
+  assert.equal(mayusculas('  maría   del  pilar '), 'MARÍA DEL PILAR');
+  assert.equal(errorNombre('ñuñez'), null);
+  assert.equal(errorNombre("d'angelo"), null);
+  assert.ok(errorNombre('juan2'));
+  assert.ok(errorNombre(''));
+  assert.equal(errorNombre('', 'Apellido', { opcional: true }), null);
+  assert.equal(errorCelular('987 654 321'), null);
+  assert.ok(errorCelular('887654321'));
+  assert.ok(errorPassword('abcdefgh'));
+  assert.equal(errorPassword('abcdefg1'), null);
+  assert.equal(nombreCompleto({ nombres: 'ana', apellido_paterno: 'rojas', apellido_materno: '' }), 'ANA ROJAS');
+});

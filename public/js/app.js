@@ -1,5 +1,6 @@
 import { enviarPendientes, sesion } from './api.js';
 import { $, $$, toast } from './ui.js';
+import { cerrarGuia, guia } from './guia.js';
 import { vistaLogin } from './views/login.js';
 import { vistaMesas } from './views/mesas.js';
 import { vistaNuevaMesa } from './views/nueva-mesa.js';
@@ -35,6 +36,7 @@ async function enrutar() {
   }
   const [re, vista, opts] = ruta;
   const params = hash.match(re).slice(1);
+  cerrarGuia();
   if (typeof limpiar === 'function') limpiar();
   limpiar = null;
 
@@ -60,6 +62,11 @@ function conexion() {
 }
 
 window.addEventListener('hashchange', enrutar);
+// Cualquier botón "?" repite la guía de su pantalla.
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-ayuda]');
+  if (b) guia(b.dataset.ayuda, { forzar: true });
+});
 window.addEventListener('online', conexion);
 window.addEventListener('offline', conexion);
 conexion();

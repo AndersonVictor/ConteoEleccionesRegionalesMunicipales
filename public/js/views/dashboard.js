@@ -1,6 +1,7 @@
 import { api, local } from '../api.js';
 import { cargarUbigeo, enlazarUbigeo, selectoresUbigeo } from '../ubigeo.js';
-import { cargando, fmt, html, iconos, logo, pct, titulo, toast } from '../ui.js';
+import { botonAyuda, cargando, fmt, html, iconos, logo, pct, titulo, toast } from '../ui.js';
+import { guia } from '../guia.js';
 
 const REFRESCO_MS = 20000;
 
@@ -100,6 +101,7 @@ export async function vistaDashboard(app) {
     app.innerHTML = String(html`
       <div class="encabezado">
         <div class="titulos"><h1>Resultados</h1><div class="sub">${d ? nombreAmbito(d.ambito) : 'Elige un ámbito'}</div></div>
+        ${botonAyuda('dashboard')}
         <button class="btn-icono" data-accion="refrescar" aria-label="Actualizar">${iconos.refrescar}</button>
       </div>
       <div class="stack-lg">
@@ -150,6 +152,7 @@ export async function vistaDashboard(app) {
         pintar();
         if (abierto !== undefined) app.querySelector('details').open = abierto || !ubigeo;
         window.scrollTo(0, y);
+        guia('dashboard');
       }
     } catch (e) {
       toast(e.message, { error: true });

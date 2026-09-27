@@ -1,7 +1,8 @@
 import { actaLocal, api, enviarActa, guardarActaLocal, local } from '../api.js';
 import { ESPECIALES, SECCIONES, evaluarCuadre, resumenSeccion, textoResultado } from '/shared/acta.js';
-import { cargando, confirmar, fmt, html, iconos, logo, modal, palitos, titulo, toast } from '../ui.js';
+import { botonAyuda, cargando, confirmar, fmt, html, iconos, logo, modal, palitos, titulo, toast } from '../ui.js';
 import { cargarActa } from './conteo.js';
+import { guia } from '../guia.js';
 
 export async function vistaResumen(app, id) {
   app.innerHTML = String(cargando());
@@ -67,6 +68,7 @@ export async function vistaResumen(app, id) {
         <a class="btn-icono" href="${abierta ? `#/acta/${id}` : '#/mesas'}" aria-label="Volver">${iconos.atras}</a>
         <div class="titulos"><h1>Mesa ${acta.mesa.numero}</h1>
           <div class="sub">${titulo(acta.mesa.distrito)}, ${titulo(acta.mesa.provincia)} · ${titulo(acta.mesa.departamento)}</div></div>
+        ${abierta ? botonAyuda('resumen') : ''}
         ${abierta ? html`<span class="chip acc">En conteo</span>` : html`<span class="chip ${acta.cuadra ? 'ok' : 'warn'}">Cerrada</span>`}
       </div>
       <div class="stack-lg">
@@ -181,5 +183,6 @@ export async function vistaResumen(app, id) {
     }
   };
   pintar();
+  if (acta.estado === 'borrador') guia('resumen');
   return () => { app.onclick = null; };
 }
