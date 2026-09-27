@@ -40,6 +40,7 @@ export function toast(msg, { error = false, accion, alAccion, duracion = 3200 } 
   if (accion) el.querySelector('button').onclick = () => { alAccion?.(); el.remove(); };
   cont.appendChild(el);
   setTimeout(() => el.remove(), duracion);
+  return el;
 }
 
 /** Modal tipo hoja inferior. contenido: string HTML. Devuelve { el, cerrar }. */

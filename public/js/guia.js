@@ -37,7 +37,7 @@ const GUIAS = {
     ['.especiales', 'Blanco, nulo o impugnado', 'Si en esa elección la cédula está en blanco, es nula o fue impugnada, toca aquí.'],
     ['[data-accion=registrar]', 'Registra la cédula', 'Cuando marcaste todas las pestañas, este botón se activa. Tócalo y empieza la siguiente cédula.', 'top'],
     ['[data-accion=deshacer]', '¿Te equivocaste?', 'Deshacer quita la última cédula registrada o limpia lo que estás marcando.', 'top'],
-    ['[data-guia=resumen]', 'Resumen y cuadre', 'Al terminar, entra aquí para revisar que todo cuadre y cerrar el acta.', 'top'],
+    ['[data-guia=resumen]', 'Resumen siempre a la vista', 'Aquí ves cuántos votos lleva cada elección. Verde: van parejos; amarillo: hay diferencias. Tócalo para ver el resumen completo y cerrar el acta.'],
   ],
   'conteo-seccion': [
     ['[data-guia=tabs-seccion]', 'Una pestaña por elección', 'Elige la elección que estás contando. Debajo de cada nombre ves cuántos votos lleva.'],

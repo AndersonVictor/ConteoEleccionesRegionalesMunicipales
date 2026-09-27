@@ -3,6 +3,7 @@ import { ESPECIALES, SECCIONES, contar, motivoTope } from '/shared/acta.js';
 import { $, botonAyuda, cargando, confirmar, fmt, html, iconos, logo, logoEspecial, modal, palitos, titulo, toast, vibrar } from '../ui.js';
 import { guia } from '../guia.js';
 
+const CORTOS = { regional: 'Gob.', consejero: 'Cons.', provincial: 'Prov.', distrital: 'Dist.' };
 const nuevoId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
 
 /** Carga el acta priorizando cambios locales que aún no llegan al servidor. */
@@ -56,9 +57,14 @@ export async function vistaConteo(app, id) {
   // Si ya se anotó cuántos votaron, avisa al pasarse (puede ser un error de conteo o del total).
   function avisarTotalVotantes() {
     const tv = acta.total_votantes;
-    if (tv == null) return;
+    if (tv == null) return false;
     const max = Math.max(0, ...secciones.map((s) => contar(acta.registros, secciones)[s].total));
-    if (max === tv + 1) toast(`Ojo: ya hay más cédulas (${max}) que ciudadanos que votaron (${tv}). Revisa el conteo o el total.`, { error: true, duracion: 6000 });
+    if (max === tv) {
+      toast(`Llegaste a ${tv} cédulas, el total que votó. ¿Terminaste?`, { accion: 'Ver resumen', alAccion: () => { location.hash = `#/acta/${id}/resumen`; }, duracion: 7000 });
+      return true;
+    }
+    if (max !== tv + 1) return false;
+    return !!toast(`Ojo: ya hay más cédulas (${max}) que ciudadanos que votaron (${tv}). Revisa el conteo o el total.`, { error: true, duracion: 6000 });
   }
 
   function deshacer() {
@@ -89,7 +95,20 @@ export async function vistaConteo(app, id) {
         <button data-accion="modo" data-modo="cedula" class="${modo === 'cedula' ? 'activo' : ''}">Por cédula</button>
         <button data-accion="modo" data-modo="seccion" class="${modo === 'seccion' ? 'activo' : ''}">Por elección</button>
       </div>
+      ${tiraResumen(conteo)}
     </div>`;
+  }
+
+  // Acceso visible al resumen: totales de cada elección y si van parejos.
+  function tiraResumen(conteo) {
+    const totales = secciones.map((s) => conteo[s].total);
+    const parejos = totales.every((t) => t === totales[0]);
+    const tv = acta.total_votantes;
+    const listo = parejos && totales[0] > 0 && (tv == null || totales[0] === tv);
+    return html`<a class="tira-resumen ${totales[0] === 0 && parejos ? '' : listo ? 'ok' : 'warn'}" href="#/acta/${id}/resumen" data-guia="resumen">
+      <span class="totales">${secciones.map((s) => html`<span><small>${CORTOS[s]}</small><b class="num">${fmt(conteo[s].total)}</b></span>`)}</span>
+      <span class="ir">Resumen ›</span>
+    </a>`;
   }
 
   function sinOrganizaciones(s) {
@@ -134,10 +153,10 @@ export async function vistaConteo(app, id) {
         ${orgs.length ? html`<button class="btn chico suave" data-accion="agregar-org" data-seccion="${s}" style="margin-top:12px">${iconos.mas} Falta una organización</button>` : ''}
       </section>
       <div class="barra-accion"><div class="dentro row">
-        <button class="btn-icono" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}</button>
+        <button class="btn-etiqueta" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}<span>Deshacer</span></button>
         <button class="btn primario registrar" data-accion="registrar" ${completa ? '' : 'disabled'}>
           ${completa ? `Registrar cédula #${fmt(acta.registros.length + 1)}` : (secciones.filter((x) => !seleccion[x]).length === 1 ? 'Falta 1 elección' : `Faltan ${secciones.filter((x) => !seleccion[x]).length} elecciones`)}</button>
-        <a class="btn-icono" href="#/acta/${id}/resumen" aria-label="Resumen y cuadre" data-guia="resumen">${iconos.lista}</a>
+        <a class="btn-etiqueta" href="#/acta/${id}/resumen" aria-label="Resumen y cuadre">${iconos.lista}<span>Resumen</span></a>
       </div></div>`;
   }
 
@@ -165,8 +184,8 @@ export async function vistaConteo(app, id) {
       </div>
       ${orgs.length ? html`<button class="btn chico suave" data-accion="agregar-org" data-seccion="${tab}" style="margin-top:12px">${iconos.mas} Falta una organización</button>` : ''}
       <div class="barra-accion"><div class="dentro row">
-        <button class="btn-icono" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}</button>
-        <a class="btn primario registrar" href="#/acta/${id}/resumen" data-guia="resumen">Resumen y cuadre</a>
+        <button class="btn-etiqueta" data-accion="deshacer" aria-label="Deshacer última">${iconos.deshacer}<span>Deshacer</span></button>
+        <a class="btn primario registrar" href="#/acta/${id}/resumen">Ver resumen y cerrar acta</a>
       </div></div>`;
   }
 
@@ -234,10 +253,10 @@ export async function vistaConteo(app, id) {
       const tope = motivoTope(contar(acta.registros, secciones), secciones, acta.mesa.electores_habiles);
       if (tope) return toast(tope, { error: true, duracion: 6000 });
       agregarRegistro(seleccion);
-      avisarTotalVotantes();
+      const avisado = avisarTotalVotantes();
       seleccion = {};
       paso = 0;
-      toast(`Cédula #${acta.registros.length} registrada`, { accion: 'Deshacer', alAccion: deshacer, duracion: 2500 });
+      if (!avisado) toast(`Cédula #${acta.registros.length} registrada`, { accion: 'Deshacer', alAccion: deshacer, duracion: 2500 });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (accion === 'deshacer') {
       if (modo === 'cedula' && Object.keys(seleccion).length) {

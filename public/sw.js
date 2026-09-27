@@ -1,5 +1,5 @@
 // Service worker: permite abrir la app sin señal (los votos ya se guardan en localStorage).
-const CACHE = 'conteo-erm-v3';
+const CACHE = 'conteo-erm-v4';
 const SHELL = [
   '/',
   '/index.html',

@@ -6,7 +6,7 @@
 // Los conteos se derivan siempre de los registros, así deshacer es tan simple como borrar uno.
 
 export const SECCIONES = {
-  regional: { id: 'regional', titulo: 'Gobernador y Vicegobernador Regional', corto: 'Gobernador regional', abrev: 'Gobernador' },
+  regional: { id: 'regional', titulo: 'Gobernador y Vicegobernador Regional', corto: 'Gobernador regional', abrev: 'Regional' },
   consejero: { id: 'consejero', titulo: 'Consejeros Regionales', corto: 'Consejo regional', abrev: 'Consejo' },
   provincial: { id: 'provincial', titulo: 'Alcalde y Regidores Provinciales', corto: 'Alcalde provincial', abrev: 'Provincial' },
   distrital: { id: 'distrital', titulo: 'Alcalde y Regidores Distritales', corto: 'Alcalde distrital', abrev: 'Distrital' },
