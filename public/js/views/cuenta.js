@@ -1,6 +1,7 @@
 import { actaLocal, api, local, sesion } from '../api.js';
 import { confirmar, html, toast } from '../ui.js';
 import { reiniciarGuias } from '../guia.js';
+import { cambiarTema, temaActual } from '../tema.js';
 
 export async function vistaCuenta(app) {
   let u = sesion.usuario;
@@ -24,10 +25,23 @@ export async function vistaCuenta(app) {
         ${u?.organizacion ? html`<div><div class="small muted">Organización</div>${u.organizacion}</div>` : ''}
       </div>
       ${pendientes ? html`<div class="aviso warn">Tienes ${pendientes} acta(s) con cambios sin enviar. Conéctate a internet antes de cerrar sesión.</div>` : ''}
+      <div class="card stack">
+        <b>Apariencia</b>
+        <div class="segmentado" id="tema">
+          ${[['auto', 'Automático'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([k, t]) => html`<button data-t="${k}" class="${temaActual() === k ? 'activo' : ''}">${t}</button>`)}
+        </div>
+        <div class="small muted">"Automático" sigue el modo de tu celular.</div>
+      </div>
       <button class="btn bloque" id="guias">Volver a ver las guías de uso</button>
       <button class="btn peligro bloque" id="salir">Cerrar sesión</button>
       <p class="small muted" style="text-align:center">Conteo ERM 2026 · herramienta de apoyo para personeros.<br>El resultado oficial es el de las actas electorales y la ONPE.</p>
     </div>`);
+  app.querySelector('#tema').onclick = (e) => {
+    const b = e.target.closest('[data-t]');
+    if (!b) return;
+    cambiarTema(b.dataset.t);
+    app.querySelectorAll('#tema button').forEach((x) => x.classList.toggle('activo', x === b));
+  };
   app.querySelector('#guias').onclick = () => {
     reiniciarGuias();
     toast('Las guías se mostrarán otra vez en cada pantalla');

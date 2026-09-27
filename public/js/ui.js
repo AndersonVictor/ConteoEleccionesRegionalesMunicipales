@@ -136,6 +136,8 @@ export const iconos = {
   refrescar: raw('<svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>'),
 };
 
+export const botonTema = () => html`<button class="btn-ayuda" type="button" data-tema aria-label="Cambiar modo claro u oscuro">◐</button>`;
+
 export const botonAyuda = (nombre) => html`<button class="btn-ayuda" type="button" data-ayuda="${nombre}" aria-label="Cómo se usa esta pantalla">?</button>`;
 
 export const cargando = () => html`<div class="cargando"><div class="spinner"></div></div>`;

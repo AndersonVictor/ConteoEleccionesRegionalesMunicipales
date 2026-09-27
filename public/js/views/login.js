@@ -1,5 +1,5 @@
 import { api, sesion } from '../api.js';
-import { botonAyuda, html, toast } from '../ui.js';
+import { botonAyuda, botonTema, html, toast } from '../ui.js';
 import { guia } from '../guia.js';
 import {
   errorCelular, errorDni, errorEmail, errorNombre, errorPassword, errorTextoLibre, mayusculas,
@@ -116,6 +116,7 @@ export function vistaLogin(app) {
 
   function pintar() {
     app.innerHTML = String(html`
+      <div class="row" style="justify-content:flex-end">${botonTema()}</div>
       <div class="marca">
         <img class="icono" src="/img/icono.svg" alt="">
         <h1>Conteo ERM 2026</h1>
@@ -128,6 +129,7 @@ export function vistaLogin(app) {
         </div>
         <form class="stack" id="form" novalidate>${modo === 'login' ? formLogin() : formRegistro()}</form>
       </div>
+      <a class="btn suave bloque" href="#/resultados" style="margin-top:16px">Ver resultados en vivo sin cuenta ›</a>
       <p class="small muted" style="text-align:center;margin-top:20px">Herramienta de apoyo para personeros. El resultado oficial es el del acta electoral y la ONPE.</p>`);
 
     const form = app.querySelector('#form');

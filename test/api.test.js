@@ -288,6 +288,24 @@ for (const [motor, opciones] of motores) {
       }
     });
 
+    test('dashboard público sin cuenta (y restringible)', async () => {
+      const r = await llamar('/dashboard?ubigeo=04');
+      assert.equal(r.status, 200);
+      assert.equal(r.resultados.seccion, 'regional');
+      assert.ok(r.resultados.organizaciones.every((o) => !/^Organización \d+$/.test(o.nombre)), 'todas con nombre');
+      // No expone datos personales de los personeros.
+      assert.doesNotMatch(JSON.stringify(r), /PERSONERO|dni|telefono|email/i);
+      process.env.DASHBOARD_PUBLICO = '0';
+      try {
+        assert.equal((await llamar('/dashboard?ubigeo=04')).status, 401);
+      } finally {
+        delete process.env.DASHBOARD_PUBLICO;
+      }
+      // Lo demás sigue requiriendo sesión.
+      assert.equal((await llamar('/actas')).status, 401);
+      assert.equal((await llamar('/admin/actas')).status, 401);
+    });
+
     test('cabeceras de seguridad', async () => {
       const r = await fetch(base + '/salud');
       assert.match(r.headers.get('content-security-policy'), /script-src 'self'/);

@@ -138,6 +138,8 @@ async function calcular(db, { ubigeo, seccion, incluirBorradores }) {
 
   const ids = new Set([...Object.keys(votosSec), ...porHijo.map((f) => f.opcion), ...votosMesas.map((f) => f.opcion)].filter((k) => !ESPECIALES[k]));
   const nombres = await nombresDe(db, ids);
+  // Las organizaciones sin votos del ámbito ya vienen con nombre y logo.
+  for (const o of base) nombres[o.id] = o;
 
   const resultados = sec
     ? { seccion: sec, titulo: SECCIONES[sec].titulo, mesas: mesasSec, ...ranking(votosSec, nombres, base) }

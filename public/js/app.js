@@ -1,6 +1,9 @@
 import { enviarPendientes, sesion } from './api.js';
 import { $, $$, toast } from './ui.js';
 import { cerrarGuia, guia } from './guia.js';
+import { alternarTema, aplicarTema } from './tema.js';
+
+aplicarTema();
 import { vistaLogin } from './views/login.js';
 import { vistaMesas } from './views/mesas.js';
 import { vistaNuevaMesa } from './views/nueva-mesa.js';
@@ -16,7 +19,7 @@ const RUTAS = [
   [/^#\/mesa\/nueva$/, vistaNuevaMesa, { nav: 'mesas' }],
   [/^#\/acta\/(\d+)$/, vistaConteo, { nav: 'mesas', barra: true }],
   [/^#\/acta\/(\d+)\/resumen$/, vistaResumen, { nav: 'mesas', barra: true }],
-  [/^#\/dashboard$/, vistaDashboard, { nav: 'dashboard' }],
+  [/^#\/resultados(?:\?(.*))?$/, vistaDashboard, { nav: 'dashboard', publica: true }],
   [/^#\/admin$/, vistaAdmin, { nav: 'admin' }],
   [/^#\/cuenta$/, vistaCuenta, { nav: 'cuenta' }],
 ];
@@ -24,12 +27,12 @@ const RUTAS = [
 let limpiar = null;
 
 async function enrutar() {
-  const hash = location.hash || '#/mesas';
-  if (!sesion.token && hash !== '#/login') {
+  const hash = location.hash === '#/dashboard' ? '#/resultados' : location.hash || '#/mesas';
+  const ruta = RUTAS.find(([re]) => re.test(hash));
+  if (!sesion.token && !ruta?.[2].publica) {
     location.hash = '#/login';
     return;
   }
-  const ruta = RUTAS.find(([re]) => re.test(hash));
   if (!ruta) {
     location.hash = '#/mesas';
     return;
@@ -42,8 +45,10 @@ async function enrutar() {
 
   const app = $('#app');
   const nav = $('#nav');
-  nav.hidden = !!opts.sinNav;
-  app.classList.toggle('sin-nav', !!opts.sinNav);
+  // Sin sesión (visitante del dashboard público) no hay menú inferior.
+  const sinNav = !!opts.sinNav || !sesion.token;
+  nav.hidden = sinNav;
+  app.classList.toggle('sin-nav', sinNav);
   app.classList.toggle('con-barra', !!opts.barra);
   $('[data-nav=admin]').hidden = sesion.usuario?.rol !== 'admin';
   $$('#nav a').forEach((a) => a.classList.toggle('activo', a.dataset.nav === opts.nav));
@@ -66,6 +71,7 @@ window.addEventListener('hashchange', enrutar);
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-ayuda]');
   if (b) guia(b.dataset.ayuda, { forzar: true });
+  if (e.target.closest('[data-tema]')) alternarTema();
 });
 window.addEventListener('online', conexion);
 window.addEventListener('offline', conexion);

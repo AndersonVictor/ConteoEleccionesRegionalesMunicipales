@@ -1,14 +1,25 @@
-import { api, local } from '../api.js';
+import { api, local, sesion } from '../api.js';
 import { cargarUbigeo, enlazarUbigeo, selectoresUbigeo } from '../ubigeo.js';
-import { botonAyuda, cargando, fmt, html, iconos, logo, pct, titulo, toast } from '../ui.js';
+import { botonAyuda, botonTema, cargando, fmt, html, iconos, logo, pct, titulo, toast } from '../ui.js';
 import { guia } from '../guia.js';
 
 const REFRESCO_MS = 20000;
 
-export async function vistaDashboard(app) {
+// El enlace lleva el ámbito y la elección (#/resultados?u=0401&s=provincial) para compartirlo.
+export async function vistaDashboard(app, query = '') {
   await cargarUbigeo();
-  let ubigeo = local.get('dashUbigeo') ?? (local.get('ultimoUbigeo', '') || '').slice(0, 2);
-  let seccion = null;
+  const q = new URLSearchParams(query || '');
+  const enlace = q.has('u') && /^\d{0,6}$/.test(q.get('u')) ? q.get('u') : null;
+  let ubigeo = enlace ?? local.get('dashUbigeo') ?? (local.get('ultimoUbigeo', '') || '').slice(0, 2);
+  let seccion = q.get('s') || null;
+  const publico = !sesion.token;
+
+  // Actualiza la dirección sin recargar, para que "Compartir" copie lo que se está viendo.
+  function actualizarEnlace() {
+    const p = new URLSearchParams({ u: ubigeo, ...(seccion ? { s: seccion } : {}) });
+    history.replaceState(null, '', `#/resultados?${p}`);
+  }
+  const urlCompartir = () => `${location.origin}/#/resultados?${new URLSearchParams({ u: ubigeo, ...(seccion ? { s: seccion } : {}) })}`;
   let borradores = local.get('dashBorradores', false);
   let datos = null;
   let timer = null;
@@ -99,9 +110,15 @@ export async function vistaDashboard(app) {
     const d = datos;
     const st = d?.mesas_stats;
     app.innerHTML = String(html`
+      ${publico ? html`<div class="barra-publica">
+        <img src="/img/icono.svg" alt=""><span class="grow"><b>Conteo ERM 2026</b><br><small>Resultados en vivo de los personeros</small></span>
+        <a class="btn chico" href="#/login">Soy personero</a>
+      </div>` : ''}
       <div class="encabezado">
         <div class="titulos"><h1>Resultados</h1><div class="sub">${d ? nombreAmbito(d.ambito) : 'Elige un ámbito'}</div></div>
+        ${botonTema()}
         ${botonAyuda('dashboard')}
+        <button class="btn-icono" data-accion="compartir" aria-label="Compartir enlace">${iconos.compartir}</button>
         <button class="btn-icono" data-accion="refrescar" aria-label="Actualizar">${iconos.refrescar}</button>
       </div>
       <div class="stack-lg">
@@ -117,6 +134,7 @@ export async function vistaDashboard(app) {
             <button data-accion="seccion" data-s="${s.id}" class="${d.resultados?.seccion === s.id ? 'activo' : ''}">${s.corto}</button>`)}</div>` : ''}
           ${st.con_diferencias.length ? html`<div class="aviso err">Mesas con conteos distintos entre personeros: <b>${st.con_diferencias.join(', ')}</b>. Revísalas con el acta oficial.</div>` : ''}
           ${d.resultados ? resultados(d.resultados) : html`<div class="aviso">Elige una región para ver resultados. A nivel nacional se muestra el resumen por región.</div>`}
+          ${publico ? html`<div class="aviso small">Resultados no oficiales, reportados por personeros desde sus mesas. Los oficiales son los de la ONPE.</div>` : ''}
           <div class="small muted">Mesas: ${fmt(st.registradas)} registradas · ${fmt(st.cerradas)} cerradas · ${fmt(st.en_conteo)} en conteo.
             Se actualiza cada 20 s · ${new Date(d.generado_en).toLocaleTimeString('es-PE')}</div>
           ${desglose(d)}
@@ -126,6 +144,7 @@ export async function vistaDashboard(app) {
     enlazarUbigeo(app, (u) => {
       ubigeo = u;
       local.set('dashUbigeo', u);
+      actualizarEnlace();
       seccion = null;
       cargar();
     }, { opcional: true });
@@ -167,19 +186,27 @@ export async function vistaDashboard(app) {
       ubigeo = b.dataset.ir;
       local.set('dashUbigeo', ubigeo);
       seccion = null;
+      actualizarEnlace();
       datos = null;
       pintar();
       cargar();
       window.scrollTo(0, 0);
     } else if (b.dataset.accion === 'seccion') {
       seccion = b.dataset.s;
+      actualizarEnlace();
       cargar();
+    } else if (b.dataset.accion === 'compartir') {
+      const url = urlCompartir();
+      const texto = `Resultados en vivo del conteo de personeros: ${datos ? nombreAmbito(datos.ambito) : ''}`;
+      if (navigator.share) navigator.share({ title: 'Conteo ERM 2026', text: texto, url }).catch(() => {});
+      else navigator.clipboard?.writeText(url).then(() => toast('Enlace copiado: compártelo por WhatsApp o redes')).catch(() => toast(url));
     } else if (b.dataset.accion === 'refrescar') {
       cargar();
     }
   };
 
   pintar();
+  if (enlace !== null || q.has('s')) actualizarEnlace();
   cargar();
   return () => {
     activo = false;

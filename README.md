@@ -57,6 +57,20 @@ npm run sync:jne -- 0401     # una provincia
 npm run sync:jne -- 040112   # un distrito
 ```
 
+## Resultados públicos
+
+El dashboard se puede ver **sin cuenta** en `/#/resultados`. Desde la pantalla de ingreso aparece el botón "Ver resultados en vivo sin cuenta".
+
+- El botón **compartir** genera un enlace al ámbito y la elección que se están viendo (por ejemplo `/#/resultados?u=0401&s=provincial`), listo para WhatsApp o redes.
+- No muestra datos personales: solo mesas, organizaciones y votos.
+- Lleva el aviso de que son resultados no oficiales.
+- Para restringirlo solo a personeros: `DASHBOARD_PUBLICO=0`.
+- La respuesta se reutiliza 5 s y se puede cachear en el navegador y en Nginx o una CDN. Por eso aguanta muchos visitantes: con la capacidad medida (≈2 800 consultas/s en 4 núcleos) y la actualización cada 20 s, son unas 50 mil personas mirando a la vez.
+
+## Apariencia
+
+Por defecto la app sigue el modo del celular (claro u oscuro). En **Mi cuenta → Apariencia** se elige Automático, Claro u Oscuro. También hay un botón rápido ◐ en el ingreso y en Resultados.
+
 ## Registro de personeros
 
 - Se ingresa con **DNI y contraseña**. El correo es **opcional**: sirve como otra forma de ingresar y queda listo para recuperar la contraseña más adelante.
@@ -176,6 +190,7 @@ Ver `.env.example`. Las principales:
 | `ADMIN_DNIS` | — | DNIs que se registran como administradores |
 | `LIMITE_LOGIN` / `LIMITE_DNI` | `100` / `60` | Intentos por IP cada 10 min (holgados por el CGNAT de las redes móviles) |
 | `DASHBOARD_CACHE_SEG` | `5` | Segundos que se reutiliza un consolidado |
+| `DASHBOARD_PUBLICO` | `1` | `0` exige iniciar sesión para ver resultados |
 | `JNE_AUTO` | `1` | `0` desactiva la consulta automática al JNE |
 | `PORT`, `DB_PATH`, `PG_POOL_MAX` | `3000`, `data/conteo.db`, `20` | Puerto, archivo SQLite y conexiones a Postgres por réplica |
 

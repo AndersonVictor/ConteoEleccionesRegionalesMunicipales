@@ -32,8 +32,8 @@
     --ink: #f3f1ee;
     --ink-2: #c4bfb8;
     --ink-3: #8f8980;
-    --accent: #ef4444;
-    --accent-ink: #1a0a0b;
+    --accent: #e5484d;
+    --accent-ink: #ffffff;
     --accent-soft: #3a1c1e;
     --bar: #7c3a40;
     --ok: #4ade80;
@@ -48,6 +48,31 @@
     color-scheme: dark;
   }
 }
+/* Tema elegido a mano en la app (anula el del sistema). */
+:root[data-theme='dark'] {
+    --bg: #151413;
+    --surface: #1f1e1c;
+    --surface-2: #2a2826;
+    --line: #37342f;
+    --ink: #f3f1ee;
+    --ink-2: #c4bfb8;
+    --ink-3: #8f8980;
+    --accent: #e5484d;
+    --accent-ink: #ffffff;
+    --accent-soft: #3a1c1e;
+    --bar: #7c3a40;
+    --ok: #4ade80;
+    --ok-soft: #173222;
+    --warn: #fbbf24;
+    --warn-soft: #3a2d12;
+    --err: #f87171;
+    --err-soft: #3b1a1a;
+    --sel: #7aa2ff;
+    --sel-soft: #1c2a4d;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+    color-scheme: dark;
+}
+
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -135,6 +160,8 @@ h3 { font-size: 1rem; }
 .btn:active { transform: scale(0.98); }
 .btn svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+/* Botón principal desactivado: gris legible en ambos modos (no rojo apagado). */
+.btn.primario:disabled { opacity: 1; background: var(--surface-2); border-color: var(--line); color: var(--ink-2); }
 .btn.primario { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .btn.suave { background: var(--surface-2); border-color: transparent; }
 .btn.peligro { color: var(--err); }
@@ -484,3 +511,11 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   font-size: 0.68rem; font-weight: 700; text-decoration: none; cursor: pointer;
 }
 .btn-etiqueta svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Cabecera del dashboard público (sin sesión) */
+.barra-publica {
+  display: flex; align-items: center; gap: 10px; margin: -16px -16px 16px; padding: 12px 16px;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.barra-publica img { width: 36px; height: 36px; border-radius: 10px; }
+.barra-publica small { color: var(--ink-3); }
