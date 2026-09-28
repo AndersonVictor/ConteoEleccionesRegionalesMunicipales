@@ -121,6 +121,20 @@ npm start              # http://localhost:3000 (la primera vez carga las organiz
 
 Registra tu cuenta: el primer usuario es administrador. Para usarlo desde el celular, publícalo con HTTPS. Sin HTTPS no se puede instalar como app ni funciona sin señal.
 
+## VPS por horas solo para la jornada (≈ 1 USD)
+
+Un VPS que se cobra por hora, encendido desde el sábado hasta el lunes, con todo incluido (microservicios, PostgreSQL, Redis y HTTPS).
+
+1. Crea un servidor **Ubuntu 24.04** con 4 a 8 vCPU. Por ejemplo Hetzner Cloud (región Ashburn, EE. UU.) o un droplet de DigitalOcean (región Nueva York).
+2. Apunta tu dominio (registro **A**) a la IP del servidor.
+3. Entra por SSH como root y ejecuta:
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/AndersonVictor/ConteoEleccionesRegionalesMunicipales/main/deploy/instalar-vps.sh \
+     | DOMINIO=conteo.midominio.pe DECOLECTA_TOKEN=tu_token ADMIN_DNIS=tu_dni bash
+   ```
+   El script instala Docker, genera claves seguras, arranca las réplicas según los núcleos y activa HTTPS automático.
+4. **Antes de borrar el servidor**, ejecuta `bash /opt/conteo/deploy/respaldo.sh` y descarga el respaldo con `scp`. Al borrar el servidor se pierde todo.
+
 ## Desplegar en Hostinger (plan Business o Cloud)
 
 Los planes Business y Cloud de Hostinger ejecutan apps de Node.js. Esta app corre ahí en modo "todo en uno".

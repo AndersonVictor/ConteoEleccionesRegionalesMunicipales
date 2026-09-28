@@ -29,6 +29,19 @@ services:
       - ./shared:/usr/share/nginx/html/shared:ro
     depends_on: [auth, conteo, resultados]
 
+  # HTTPS con certificado automático. Se activa con: docker compose --profile https up -d
+  caddy:
+    image: caddy:2-alpine
+    profiles: ["https"]
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMINIO: ${DOMINIO:-localhost}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on: [gateway]
+
   auth:
     <<: *servicio
     environment: { <<: *env, SERVICIO: auth }
@@ -69,3 +82,4 @@ services:
 
 volumes:
   pgdata:
+  caddy_data:
