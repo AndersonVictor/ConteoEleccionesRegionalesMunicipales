@@ -121,6 +121,25 @@ npm start              # http://localhost:3000 (la primera vez carga las organiz
 
 Registra tu cuenta: el primer usuario es administrador. Para usarlo desde el celular, publícalo con HTTPS. Sin HTTPS no se puede instalar como app ni funciona sin señal.
 
+## Desplegar en Hostinger (plan Business o Cloud)
+
+Los planes Business y Cloud de Hostinger ejecutan apps de Node.js. Esta app corre ahí en modo "todo en uno".
+
+1. **Base de datos:** Hostinger solo ofrece MySQL y **borra los archivos del proyecto en cada despliegue**, así que no uses SQLite ahí. Crea una base **PostgreSQL gratis** en [Neon](https://neon.tech) (región São Paulo, la más cercana) y copia su cadena de conexión (`postgres://...?sslmode=require`).
+2. **Rama:** fusiona el PR a `main`, o elige esta rama al importar.
+3. En hPanel: **Websites → Add Website → Node.js web app → Import Git repository**, conecta GitHub y elige este repositorio.
+4. **Configuración:** versión de Node **22.x o 24.x**, comando de inicio `npm start`, sin comando de build.
+5. **Variables de entorno** (sección *Environment variables*, o *Import .env*):
+   - `DATABASE_URL`: la cadena de Neon.
+   - `SECRET`: una clave larga aleatoria.
+   - `DECOLECTA_TOKEN`: tu token.
+   - `ADMIN_DNIS`: tu DNI.
+   - `ELECCION_INICIO=2026-10-04T08:00:00-05:00`
+6. **Deploy.** Conecta tu dominio y activa el SSL gratuito de Hostinger: con HTTPS la app se puede instalar en el celular.
+7. **Verifica** que `https://tu-dominio/api/salud` responda `"motor":"postgres"`.
+
+La primera vez se cargan solas las organizaciones de Arequipa. Para otras regiones, corre `npm run sync:jne -- <ubigeo>` desde tu PC con el mismo `DATABASE_URL`.
+
 ## Despliegue para alto tráfico (microservicios)
 
 ```
