@@ -12,7 +12,10 @@ DIR=/opt/conteo
 # Servidores con menos de 2 GB de RAM (p. ej. Scaleway Stardust, 1 GB): modo liviano, sin Docker.
 # La app corre como un solo proceso con SQLite y Caddy da HTTPS. MODO=completo|liviano lo fuerza.
 RAM_MB=$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)
-MODO="${MODO:-$([ "$RAM_MB" -lt 1900 ] && echo liviano || echo completo)}"
+# Con 1 vCPU tampoco conviene Docker: Postgres y las réplicas compiten por el mismo núcleo.
+MODO="${MODO:-$([ "$RAM_MB" -lt 1900 ] || [ "$(nproc)" -lt 2 ] && echo liviano || echo completo)}"
+# Memoria máxima para Node según la RAM del servidor (512 MB de RAM -> 256 MB para la app).
+NODE_MEM=$([ "$RAM_MB" -lt 900 ] && echo 256 || echo 512)
 echo "==> RAM: ${RAM_MB} MB -> modo $MODO"
 
 apt-get update -qq
@@ -68,7 +71,7 @@ After=network.target
 User=conteo
 WorkingDirectory=$DIR
 Environment=NODE_ENV=production PORT=3000 HOST=127.0.0.1
-ExecStart=/usr/bin/node --max-old-space-size=512 --disable-warning=ExperimentalWarning server/index.js
+ExecStart=/usr/bin/node --max-old-space-size=$NODE_MEM --disable-warning=ExperimentalWarning server/index.js
 Restart=always
 RestartSec=2
 
