@@ -133,6 +133,7 @@ Un VPS que se cobra por hora, encendido desde el sábado hasta el lunes, con tod
      | DOMINIO=conteo.midominio.pe DECOLECTA_TOKEN=tu_token ADMIN_DNIS=tu_dni bash
    ```
    El script instala Docker, genera claves seguras, arranca las réplicas según los núcleos y activa HTTPS automático.
+   - **Servidores de menos de 2 GB de RAM** (por ejemplo Scaleway Stardust, 1 vCPU y 1 GB): el script usa el **modo liviano**. Corre un solo proceso de Node con SQLite y Caddy da el HTTPS, sin Docker. Medido en 1 núcleo: 643 guardados/s sin errores, con 197 MB de RAM.
 4. **Antes de borrar el servidor**, ejecuta `bash /opt/conteo/deploy/respaldo.sh` y descarga el respaldo con `scp`. Al borrar el servidor se pierde todo.
 
 ## Desplegar en Hostinger (plan Business o Cloud)
