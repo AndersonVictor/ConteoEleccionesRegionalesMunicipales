@@ -1,0 +1,28 @@
+{
+  "name": "conteo-erm-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Conteo de votos por mesa para personeros - Elecciones Regionales y Municipales 2026 (Perú)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning --watch server/index.js",
+    "seed": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/seed.js",
+    "sync:jne": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/sync-jne.js",
+    "carga": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/carga.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 test/*.test.js",
+    "probar:dni": "node --env-file-if-exists=.env scripts/probar-dni.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.23.0",
+    "redis": "^6.2.1"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0",
+    "driver.js": "^1.8.0"
+  }
+}

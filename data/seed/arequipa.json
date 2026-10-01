@@ -1,0 +1,4427 @@
+{
+ "descripcion": "Organizaciones políticas ERM 2026 del departamento de Arequipa, obtenidas de la API pública Voto Informado (JNE). Solo nombres y logos, sin datos de candidatos.",
+ "fuente": "https://votoinformado.jne.gob.pe/api/v1/candidatos/organizaciones",
+ "ambitos": [
+  {
+   "tipo": "regional",
+   "ubigeo": "04",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2988,
+     "nombre": "VISION PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2988.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0401",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0402",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0403",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0404",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0405",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0406",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0407",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "consejero",
+   "ubigeo": "0408",
+   "actualizado": "2026-09-26",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2982,
+     "nombre": "COALICION TRANSFORMADORA TIERRA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2982.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0401",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2857,
+     "nombre": "PARTIDO FRENTE DE LA ESPERANZA 2021",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2857.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3001,
+     "nombre": "PARTIDO POLITICO PUEBLO CONSCIENTE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3001.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2931,
+     "nombre": "PRIMERO LA GENTE - COMUNIDAD, ECOLOGIA, LIBERTAD Y PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2931.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0402",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3036,
+     "nombre": "ALIANZA REGIONAL POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3036.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2985,
+     "nombre": "PARTIDO POLITICO INTEGRIDAD DEMOCRATICA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2985.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0403",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2898,
+     "nombre": "FE EN EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2898.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0404",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0405",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2901,
+     "nombre": "FRENTE POPULAR AGRICOLA FIA DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2901.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0406",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0407",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "provincial",
+   "ubigeo": "0408",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040102",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2218,
+     "nombre": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2218.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040103",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2984,
+     "nombre": "BATALLA PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2984.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040104",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2933,
+     "nombre": "LIBERTAD POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2933.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 2857,
+     "nombre": "PARTIDO FRENTE DE LA ESPERANZA 2021",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2857.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040105",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040106",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2941,
+     "nombre": "PARTIDO CIVICO OBRAS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2941.png"
+    },
+    {
+     "jne_id": 2867,
+     "nombre": "PARTIDO DEMOCRATA UNIDO PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2867.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040107",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3046,
+     "nombre": "COOPERACION, VERDAD Y HONRADEZ",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3046.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040108",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040109",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040110",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040111",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2956,
+     "nombre": "PARTIDO PAIS PARA TODOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2956.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040112",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2984,
+     "nombre": "BATALLA PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2984.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2840,
+     "nombre": "PARTIDO MORADO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2840.png"
+    },
+    {
+     "jne_id": 2218,
+     "nombre": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2218.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040113",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040114",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040115",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2956,
+     "nombre": "PARTIDO PAIS PARA TODOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2956.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040116",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040117",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040118",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2869,
+     "nombre": "PARTIDO PATRIOTICO DEL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2869.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040119",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040120",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040121",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040122",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2173,
+     "nombre": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2173.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040123",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040124",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2944,
+     "nombre": "PARTIDO UNIDAD Y PAZ",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2944.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040125",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040126",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040127",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040128",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040129",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2173,
+     "nombre": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2173.png"
+    },
+    {
+     "jne_id": 2984,
+     "nombre": "BATALLA PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2984.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2930,
+     "nombre": "PARTIDO APRISTA PERUANO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2930.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040202",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040203",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040204",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040205",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040206",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040207",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040208",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040302",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040303",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040304",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040305",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040306",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2898,
+     "nombre": "FE EN EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2898.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040307",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040308",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2898,
+     "nombre": "FE EN EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2898.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2840,
+     "nombre": "PARTIDO MORADO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2840.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040309",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2898,
+     "nombre": "FE EN EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2898.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040310",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040311",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040312",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040313",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2840,
+     "nombre": "PARTIDO MORADO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2840.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040402",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040403",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040404",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040405",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040406",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040407",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040408",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2984,
+     "nombre": "BATALLA PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2984.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2924,
+     "nombre": "PERU MODERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2924.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040409",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040410",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040411",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040412",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040413",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040414",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040502",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040503",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040504",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040505",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040506",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040507",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040508",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040509",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040510",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040511",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040512",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040513",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040514",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040515",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2218,
+     "nombre": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2218.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040516",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040517",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040518",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040519",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040520",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 3028,
+     "nombre": "ALIANZA ELECTORAL VENCEREMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3028.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2857,
+     "nombre": "PARTIDO FRENTE DE LA ESPERANZA 2021",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2857.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    },
+    {
+     "jne_id": 2927,
+     "nombre": "SALVEMOS AL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2927.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040602",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040603",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040604",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040605",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040606",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040607",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040608",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 3046,
+     "nombre": "COOPERACION, VERDAD Y HONRADEZ",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3046.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040702",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2961,
+     "nombre": "PARTIDO DEL BUEN GOBIERNO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2961.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040703",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 2895,
+     "nombre": "PARTIDO DEMOCRATA VERDE",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2895.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040704",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 1264,
+     "nombre": "JUNTOS POR EL PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1264.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 3040,
+     "nombre": "RENOVACION POPULAR PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/3040.png"
+    },
+    {
+     "jne_id": 2744,
+     "nombre": "YO AREQUIPA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2744.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040705",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040706",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040802",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040803",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040804",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040805",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040806",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2943,
+     "nombre": "PARTIDO POPULAR CRISTIANO - PPC",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2943.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040807",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2967,
+     "nombre": "PROGRESEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2967.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040808",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 14,
+     "nombre": "PARTIDO DEMOCRATICO SOMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/14.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    },
+    {
+     "jne_id": 2731,
+     "nombre": "PODEMOS PERU",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2731.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040809",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040810",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 4,
+     "nombre": "ACCION POPULAR",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/4.png"
+    },
+    {
+     "jne_id": 2307,
+     "nombre": "MOVIMIENTO REGIONAL AREQUIPA AVANCEMOS",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2307.png"
+    }
+   ]
+  },
+  {
+   "tipo": "distrital",
+   "ubigeo": "040811",
+   "actualizado": "2026-09-15",
+   "organizaciones": [
+    {
+     "jne_id": 2980,
+     "nombre": "AHORA NACION - AN",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2980.png"
+    },
+    {
+     "jne_id": 1257,
+     "nombre": "ALIANZA PARA EL PROGRESO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1257.png"
+    },
+    {
+     "jne_id": 142,
+     "nombre": "AREQUIPA, TRADICION Y FUTURO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/142.png"
+    },
+    {
+     "jne_id": 1393,
+     "nombre": "FUERZA AREQUIPEÑA",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/1393.png"
+    },
+    {
+     "jne_id": 2925,
+     "nombre": "PARTIDO POLITICO PERU PRIMERO",
+     "logo": "https://stovotoinformadodev.blob.core.windows.net/contenedor-2/2925.png"
+    }
+   ]
+  }
+ ]
+}

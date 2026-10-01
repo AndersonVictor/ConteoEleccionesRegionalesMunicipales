@@ -1,0 +1,5 @@
+# HTTPS automático (Let's Encrypt) para el dominio definido en DOMINIO.
+{$DOMINIO} {
+	encode gzip
+	reverse_proxy gateway:80
+}

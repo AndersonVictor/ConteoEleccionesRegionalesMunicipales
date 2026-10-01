@@ -1,0 +1,85 @@
+# Despliegue con microservicios para alto tráfico.
+#   cp .env.example .env    (completa SECRET, POSTGRES_PASSWORD y DECOLECTA_TOKEN)
+#   docker compose up -d --build
+#   docker compose up -d --scale conteo=6 --scale resultados=3   (más réplicas en el día de la elección)
+# La app queda en http://localhost:8080 (pon un proxy con HTTPS delante: Caddy, Cloudflare, etc.).
+
+x-servicio: &servicio
+  build: .
+  restart: unless-stopped
+  env_file:
+    - path: .env
+      required: false
+  environment: &env
+    DATABASE_URL: postgres://conteo:${POSTGRES_PASSWORD}@postgres:5432/conteo
+    REDIS_URL: redis://redis:6379
+    PG_POOL_MAX: "15"
+  depends_on:
+    postgres: { condition: service_healthy }
+    redis: { condition: service_healthy }
+
+services:
+  gateway:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports: ["8080:80"]
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+      - ./shared:/usr/share/nginx/html/shared:ro
+    depends_on: [auth, conteo, resultados]
+
+  # HTTPS con certificado automático. Se activa con: docker compose --profile https up -d
+  caddy:
+    image: caddy:2-alpine
+    profiles: ["https"]
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMINIO: ${DOMINIO:-localhost}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on: [gateway]
+
+  auth:
+    <<: *servicio
+    environment: { <<: *env, SERVICIO: auth }
+    deploy: { replicas: 2 }
+
+  conteo:
+    <<: *servicio
+    environment: { <<: *env, SERVICIO: conteo }
+    deploy: { replicas: 4 }
+
+  resultados:
+    <<: *servicio
+    environment: { <<: *env, SERVICIO: resultados }
+    deploy: { replicas: 2 }
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: conteo
+      POSTGRES_USER: conteo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    command: ["postgres", "-c", "max_connections=300", "-c", "shared_buffers=512MB", "-c", "synchronous_commit=off"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U conteo -d conteo"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--save", "", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  pgdata:
+  caddy_data:

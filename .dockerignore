@@ -1,0 +1,7 @@
+node_modules
+data/*.db
+data/*.db-*
+data/secret.key
+.env
+.git
+test
